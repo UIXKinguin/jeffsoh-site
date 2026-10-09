@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automated Trading Bot | Jeffrey Oh</title>
+<meta name="description" content="A once-a-day paper-trading bot for the S&amp;P 500 that combines a dip strategy with a trend strategy, built around loss limits, a kill switch and alerts. A project by Jeffrey Oh.">
+<link rel="canonical" href="https://www.jeffsoh.com/side-projects/automated-trading-bot/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Automated Trading Bot | Jeffrey Oh">
+<meta property="og:description" content="A once-a-day paper-trading bot for the S&amp;P 500 that combines a dip strategy with a trend strategy, built around loss limits, a kill switch and alerts. A project by Jeffrey Oh.">
+<meta property="og:url" content="https://www.jeffsoh.com/side-projects/automated-trading-bot/">
+<meta property="og:image" content="https://www.jeffsoh.com/assets/img/side-projects/trading-bot-cover.webp">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="../../">Jeffrey Oh</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul><li><a href="../../my-work/">Work</a></li><li><a href="../" aria-current="page">Projects</a></li><li><a href="../../about-me/">About</a></li><li><a href="../../contact/">Contact</a></li></ul>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="container">
+  <header class="page-head">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol><li><a href="../">Projects</a></li><li><span aria-current="page">Trading Bot</span></li></ol>
+    </nav>
+    <h1>Automated Trading Bot</h1>
+    <p class="lede">A rules-based bot that trades the S&amp;P 500 once a day without emotion, and stays safe while doing it.</p>
+    <dl class="meta">
+      <div><dt>Product</dt><dd>Paper-trading bot</dd></div>
+      <div><dt>Role</dt><dd>Designer and developer</dd></div>
+      <div><dt>Stack</dt><dd>Python, GitHub Actions, Alpaca</dd></div>
+    </dl>
+  </header>
+
+  <div class="case-layout no-toc">
+    <article class="prose">
+    <h2 id="background">Background</h2>
+    <p>Many people want their savings to grow but do not have time to watch the market every day. Emotion also gets in the way: people buy when prices are high and sell in a panic when prices drop.</p>
+    <h3>Problem</h3>
+    <p>Can a small set of clear, tested rules make steady trading decisions without emotion, and stay safe while doing it? The bot also has to be easy to stop and easy to understand.</p>
+    <h3>Approach</h3>
+    <p>I designed the bot around safety first and returns second. It trades only on a paper (simulated) account, and the code cannot switch to real money.</p>
+
+    <h2 id="how">How it works</h2>
+    <p>Every trading day after the close, the bot reads the closing prices and queues its orders, which fill when the market opens the next morning. The account runs two strategies side by side.</p>
+    <div class="split-cards">
+      <div>
+        <h3>Dips (60%)</h3>
+        <ul>
+          <li><strong>Buy</strong> SPY after a short dip, but only while the long-term trend is up (price above its 200-day average and 2-day RSI below 10).</li>
+          <li><strong>Sell</strong> when the price recovers above its 5-day average, after 5 trading days, or at a 3% loss.</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Trend (40%)</h3>
+        <ul>
+          <li><strong>Hold</strong> an S&amp;P 500 fund (IVV) while it stays above its 200-day average.</li>
+          <li><strong>Sell</strong> when it closes below that average, and buy back when it closes above again.</li>
+        </ul>
+      </div>
+    </div>
+    <p>Idle cash sits in a T-bill fund (BIL) so it earns interest between trades.</p>
+
+    <h2 id="results">Backtest results</h2>
+    <figure class="wide">
+      <img loading="lazy" decoding="async" width="1800" height="930" src="../../assets/img/side-projects/trading-bot-cover.webp" alt="Two bar charts comparing three strategies. Average yearly return: the bot 7.9%, SPY dips only 4.0%, SPY buy and hold 15.1%. Worst drop from a peak: the bot -12.5%, dips only -6.7%, buy and hold -33.8%.">
+      <figcaption>The bot gives up some return compared with buying and holding, in exchange for a much smaller worst-case drop.</figcaption>
+    </figure>
+    <div class="table-wrap">
+      <table>
+        <caption>Backtest on 10 years of daily data, with a 0.05% cost per trade</caption>
+        <thead><tr><th scope="col">Strategy</th><th scope="col">Yearly return</th><th scope="col">Worst drop</th><th scope="col">Trades</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Bot: 60% dips, 40% trend</th><td>7.9%</td><td>-12.5%</td><td>109</td></tr>
+          <tr><th scope="row">SPY dips only</th><td>4.0%</td><td>-6.7%</td><td>84</td></tr>
+          <tr><th scope="row">SPY trend only</th><td>11.4%</td><td>-19.5%</td><td>25</td></tr>
+          <tr><th scope="row">SPY buy and hold</th><td>15.1%</td><td>-33.8%</td><td>0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">Past results do not predict future returns. This is a learning project on a simulated account, not financial advice.</p>
+
+    <h2 id="safety">Safety by design</h2>
+    <ul>
+      <li>No new buys after a 2% loss in a day or a 5% loss in a week.</li>
+      <li>A one-switch kill switch pauses the bot and cancels open orders.</li>
+      <li>API keys stay in GitHub secrets, never in the code.</li>
+      <li>Discord alerts for every trade, large move, loss limit and error. Quiet days send nothing, so alerts stay meaningful.</li>
+    </ul>
+
+    <h2 id="testing">Testing</h2>
+    <ul>
+      <li>Backtested on 10 years of S&amp;P 500 history, with 0.05% per side charged to account for slippage.</li>
+      <li>A comparison tool runs the strategies side by side with alternatives (other indexes, trend only, and plain buy and hold) and checks that results hold in both halves of the period.</li>
+      <li>Automated tests run on fake data, so no keys are needed.</li>
+    </ul>
+
+    <h2 id="takeaways">Takeaways</h2>
+    <p>Good automation design means honest limits. I documented the known gaps: the stop-loss is checked once a day, orders fill at the next open so an overnight gap can move the price, and paper fills skip slippage. Being clear about what a system cannot do is part of earning a user’s trust.</p>
+  </article>
+  </div>
+
+  <nav class="next-project" aria-label="More projects">
+    <div><span class="label">Next project</span><a class="big" href="../experience-improvement-framework/">Experience Improvement Framework</a></div>
+    <a class="text-link" href="../">All projects</a>
+  </nav>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Jeffrey Oh. Built with HTML and CSS.</p>
+    <ul>
+      <li><a href="mailto:jeffrey.oh.hci@gmail.com">jeffrey.oh.hci@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/jsohci/">LinkedIn</a></li>
+      <li><a href="../../assets/files/jeffrey-oh-resume.pdf">Resume (PDF)</a></li>
+      <li><a href="../../why-me/">Why me</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

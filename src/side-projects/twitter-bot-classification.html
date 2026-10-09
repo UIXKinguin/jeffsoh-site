@@ -1,0 +1,48 @@
+<!-- {"title": "Twitter Bot Classification", "description": "A reproducible Python workflow that separates likely-bot from likely-human sentiment in political tweets, using Botometer, VADER, TextBlob, SciPy and LDA topic modeling. Research by Jeffrey Oh.", "path": "/side-projects/twitter-bot-classification/", "nav": "projects"} -->
+<div class="container">
+  <header class="page-head">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol><li><a href="/side-projects/">Projects</a></li><li><span aria-current="page">Twitter Bot Classification</span></li></ol>
+    </nav>
+    <h1>Twitter Bot Classification</h1>
+    <p class="lede">Telling genuine public reaction apart from likely-bot activity in political discourse.</p>
+    <dl class="meta">
+      <div><dt>Department</dt><dd>Information Science</dd></div>
+      <div><dt>Role</dt><dd>Head Researcher</dd></div>
+      <div><dt>Year</dt><dd>2025</dd></div>
+    </dl>
+  </header>
+
+  <div class="case-layout no-toc">
+    <article class="prose">
+      <h2 id="problem">Problem</h2>
+      <p>Organizations that use social sentiment data need to distinguish genuine public reaction from activity associated with likely-bot accounts.</p>
+
+      <h2 id="approach">Approach</h2>
+      <p>I built an end-to-end Python workflow on 350+ political tweets:</p>
+      <ol>
+        <li><strong>Scrape:</strong> collect the political tweets and their accounts.</li>
+        <li><strong>Classify:</strong> Botometer bot-likelihood scoring for each account.</li>
+        <li><strong>Score:</strong> sentiment with both VADER and TextBlob, so the two models can be compared.</li>
+        <li><strong>Validate:</strong> SciPy t-tests on sentiment differences between likely-bot and likely-human accounts.</li>
+        <li><strong>Visualize:</strong> chart the results, with Gensim LDA topic modeling.</li>
+      </ol>
+
+      <h2 id="result">Result</h2>
+      <p>A reproducible scrape, classify, score, validate and visualize workflow. Comparing two sentiment models strengthened confidence in the results, and the analysis surfaced an honest limit: the highest bot-likelihood tier had too few accounts for strong conclusions.</p>
+
+      <h2 id="transfer">Where else it applies</h2>
+      <p>The workflow generalizes to brand-sentiment monitoring, review-authenticity analysis and public-opinion research.</p>
+
+      <h2 id="tools">Tools</h2>
+      <ul class="tags" aria-label="Tools">
+        <li>Python</li><li>Botometer</li><li>VADER</li><li>TextBlob</li><li>SciPy</li><li>Gensim LDA</li>
+      </ul>
+    </article>
+  </div>
+
+  <nav class="next-project" aria-label="More projects">
+    <div><span class="label">Next project</span><a class="big" href="/side-projects/ev-battery-failure-prediction-agent/">EV Battery Agent</a></div>
+    <a class="text-link" href="/side-projects/">All projects</a>
+  </nav>
+</div>

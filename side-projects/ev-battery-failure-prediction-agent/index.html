@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EV Battery Failure Prediction Agent | Jeffrey Oh</title>
+<meta name="description" content="An AI agent that predicts EV battery failure and remaining life, explains every result, and turns daily fleet data into reports and alerts. A project by Jeffrey Oh.">
+<link rel="canonical" href="https://www.jeffsoh.com/side-projects/ev-battery-failure-prediction-agent/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="EV Battery Failure Prediction Agent | Jeffrey Oh">
+<meta property="og:description" content="An AI agent that predicts EV battery failure and remaining life, explains every result, and turns daily fleet data into reports and alerts. A project by Jeffrey Oh.">
+<meta property="og:url" content="https://www.jeffsoh.com/side-projects/ev-battery-failure-prediction-agent/">
+<meta property="og:image" content="https://www.jeffsoh.com/assets/img/side-projects/ev-failure-drivers.webp">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="../../">Jeffrey Oh</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul><li><a href="../../my-work/">Work</a></li><li><a href="../" aria-current="page">Projects</a></li><li><a href="../../about-me/">About</a></li><li><a href="../../contact/">Contact</a></li></ul>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="container">
+  <header class="page-head">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol><li><a href="../">Projects</a></li><li><span aria-current="page">EV Battery Agent</span></li></ol>
+    </nav>
+    <h1>EV Battery Failure Prediction Agent</h1>
+    <p class="lede">An AI agent that tells fleet managers which batteries are likely to fail, how much life each has left, and why.</p>
+    <dl class="meta">
+      <div><dt>Product</dt><dd>AI analytical agent for EV fleets</dd></div>
+      <div><dt>Role</dt><dd>Designer and developer</dd></div>
+      <div><dt>Duration</dt><dd>2 weeks</dd></div>
+    </dl>
+  </header>
+
+  <div class="case-layout no-toc">
+    <article class="prose">
+    <h2 id="background">Background</h2>
+    <p>Fleet operators manage thousands of electric vehicles, and the battery is the most expensive part of each one. A battery that fails without warning means a vehicle off the road, an unhappy driver and a costly emergency repair. Most fleets already collect daily telemetry, but that data sits in spreadsheets that nobody has time to read.</p>
+    <h3>Problem</h3>
+    <p>Fleet managers need to know which batteries are likely to fail, how much life each one has left, and why. A risk score on its own is not enough: if people cannot see the reason behind a prediction, they do not trust it and they do not act on it.</p>
+    <h3>Approach</h3>
+    <p>I applied the same rule I use for UX work: start with the user’s questions, not the technology. A fleet manager asks three things every morning: “What changed?”, “Who do I need to look at today?” and “Why?” Every part of the agent answers one of those questions.</p>
+
+    <h2 id="results">Results</h2>
+    <p>Trained on 20,000 vehicles and tested on 4,000 it had never seen:</p>
+    <dl class="stats">
+      <div><dt>Failure prediction (ROC-AUC)</dt><dd>0.985</dd></div>
+      <div><dt>Failures caught</dt><dd>84%</dd></div>
+      <div><dt>Precision of alerts</dt><dd>75%</dd></div>
+      <div><dt>Remaining-life fit (R²)</dt><dd>0.906</dd></div>
+    </dl>
+    <p>The remaining-life estimate comes with a 90% range that held 90.0% of the time on the test set. Everything except the optional agent mode runs offline, with no API key.</p>
+
+    <h2 id="built">What I built</h2>
+    <ul>
+      <li><strong>Prediction:</strong> failure probability with a risk band, and remaining life in cycles, kilometres or days, with a calibrated 90% range.</li>
+      <li><strong>Explanation:</strong> for every vehicle, the factors that drive its risk, plus charts, outliers and the reason one model was chosen over the others.</li>
+      <li><strong>Daily intake:</strong> takes in the fleet’s daily export (CSV, Excel, JSON or Parquet), maps the columns, and checks the data for gaps, bad values and drift.</li>
+      <li><strong>Reports and alerts:</strong> daily and weekly reports with an action list, alerts by email, Slack or Teams, and a dashboard that refreshes on every intake.</li>
+      <li><strong>Learning loop:</strong> recorded outcomes (“failed”, “false alarm”) become training labels. A new model goes live only if it beats the current one.</li>
+      <li><strong>Agent mode:</strong> Claude plans the analysis with 20 tools, reads its own charts and explains the results in plain language.</li>
+    </ul>
+
+    <h2 id="explanations">Showing the why</h2>
+    <p>Every number the agent reports comes with the evidence behind it. These charts come straight from the agent’s own reports.</p>
+    <figure class="wide">
+      <img loading="lazy" decoding="async" width="1178" height="905" src="../../assets/img/side-projects/ev-failure-drivers.webp" alt="Bar chart: what separates failed from healthy batteries. Higher thermal runaway risk (+0.68), capacity loss (+0.64), internal resistance (+0.60) and cell temperature (+0.59) mark failed batteries; lower thermal health score (-0.68), battery health (-0.64) and state of health (-0.63) do too.">
+      <figcaption>What separates failed from healthy batteries, as an effect size from -1 to +1. Thermal runaway risk and battery health lead.</figcaption>
+    </figure>
+    <div class="gallery two">
+      <figure>
+        <img loading="lazy" decoding="async" width="884" height="855" src="../../assets/img/side-projects/ev-remaining-life-calibration.webp" alt="Scatter plot of predicted versus actual remaining life in cycles, tightly clustered along the diagonal, with a grey 90% band containing 89.9% of points.">
+        <figcaption>Predicted vs actual remaining life. The grey band is the 90% range.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" decoding="async" width="1274" height="548" src="../../assets/img/side-projects/ev-risk-bands.webp" alt="Bar chart comparing vehicles per risk band on two days: low about 2,500, moderate about 100, elevated about 99, and high rising from 300 to 315.">
+        <figcaption>Daily change in vehicles per risk band, from the daily report.</figcaption>
+      </figure>
+    </div>
+    <figure class="wide">
+      <img loading="lazy" decoding="async" width="1538" height="525" src="../../assets/img/side-projects/ev-model-comparison.webp" alt="Two model comparison charts. Failure classifier: logistic regression scores 0.987 cross-validated ROC-AUC, ahead of histogram gradient boosting at 0.981 and random forest at 0.967. Remaining life: ridge regression has the lowest error at 412 cycles.">
+      <figcaption>The agent compares several models and explains why the winner was picked.</figcaption>
+    </figure>
+
+    <h2 id="takeaways">Takeaways</h2>
+    <p>Trust is a design problem. The most useful feature was not the model’s accuracy but the explanation next to each number. A decision log and a “Needs review” section make every run auditable, so a manager can check the agent’s work instead of taking it on faith.</p>
+  </article>
+  </div>
+
+  <nav class="next-project" aria-label="More projects">
+    <div><span class="label">Next project</span><a class="big" href="../automated-trading-bot/">Automated Trading Bot</a></div>
+    <a class="text-link" href="../">All projects</a>
+  </nav>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Jeffrey Oh. Built with HTML and CSS.</p>
+    <ul>
+      <li><a href="mailto:jeffrey.oh.hci@gmail.com">jeffrey.oh.hci@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/jsohci/">LinkedIn</a></li>
+      <li><a href="../../assets/files/jeffrey-oh-resume.pdf">Resume (PDF)</a></li>
+      <li><a href="../../why-me/">Why me</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

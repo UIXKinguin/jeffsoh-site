@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Venmo Groups | Jeffrey Oh</title>
+<meta name="description" content="Venmo Groups: a concept feature that lets friends split a bill with one group request instead of many. A UX case study by Jeffrey Oh.">
+<link rel="canonical" href="https://www.jeffsoh.com/my-work/venmo-groups/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Venmo Groups | Jeffrey Oh">
+<meta property="og:description" content="Venmo Groups: a concept feature that lets friends split a bill with one group request instead of many. A UX case study by Jeffrey Oh.">
+<meta property="og:url" content="https://www.jeffsoh.com/my-work/venmo-groups/">
+<meta property="og:image" content="https://www.jeffsoh.com/assets/img/venmo-groups/cover.webp">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="../../">Jeffrey Oh</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul><li><a href="../" aria-current="page">Work</a></li><li><a href="../../side-projects/">Projects</a></li><li><a href="../../about-me/">About</a></li><li><a href="../../contact/">Contact</a></li></ul>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="container">
+  <header class="page-head">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol><li><a href="../">Work</a></li><li><span aria-current="page">Venmo Groups</span></li></ol>
+    </nav>
+    <h1>Venmo Groups</h1>
+    <p class="lede">A group feature for Venmo, so one request settles a shared bill.</p>
+    <dl class="meta">
+      <div><dt>Product</dt><dd>Concept feature for Venmo</dd></div>
+      <div><dt>Role</dt><dd>UX Designer</dd></div>
+      <div><dt>Duration</dt><dd>2 weeks</dd></div>
+    </dl>
+    <figure class="cover">
+      <img width="1600" height="900" fetchpriority="high" src="../../assets/img/venmo-groups/cover.webp" alt="Several Venmo Groups screens on a blue background: a group chat, a payment request, a split-amount keypad and the groups list.">
+    </figure>
+  </header>
+
+  <div class="case-layout">
+    <nav class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title">On this page</h2>
+        <ol>
+          <li><a href="#background">Background</a></li>
+          <li><a href="#highlights">UI highlights</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#design">Define and design</a></li>
+          <li><a href="#testing">Testing and the future</a></li>
+          <li><a href="#takeaways">Key takeaways</a></li>
+        </ol>
+    </nav>
+    <article class="prose">
+    <h2 id="background">Background</h2>
+    <p>Venmo has long been one of the forerunners in mobile payment platforms between friends. With its ability to safely and securely send friends and family payments in a fun and convenient way, Venmo has solidified its spot as one of the highest ranking and most used payment applications in the United States. This does not mean there are no shortcomings of the application.</p>
+    <h3>Problem</h3>
+    <p>Despite being a leader in what we see as a social payment platform, there are very few aspects of the application we can say is social. There is one specific use case in which using the application becomes cumbersome and takes too many interactions to accomplish. That problem is group payments. There are often times when friends will gather together and have a night out or have a nice dinner. At the end of the day someone might say “I’ll pay this time, just Venmo me later.” What this does is create one of the use cases in which multiple people have to pay back one person.</p>
+    <p>Currently Venmo has very few ways of tracking ongoing payments and the process feels anti-human. For example, in a group of 5 why should the requester need to request money 4 separate times in order to get their money back? 1 request should suffice, should it not?</p>
+    <p>This is what led me to develop the idea of Venmo Groups.</p>
+
+    <h2 id="highlights">UI highlights</h2>
+    <div class="gallery">
+      <figure><img loading="lazy" decoding="async" width="1600" height="1910" src="../../assets/img/venmo-groups/new-room-annotated.webp" alt="New group chat screen for The Boys showing who joined. Note: a newly created group works just like a group chat."></figure>
+      <figure><img loading="lazy" decoding="async" width="1600" height="1910" src="../../assets/img/venmo-groups/sidebar-annotated.webp" alt="Group sidebar with a Request From Group button, payment history and member list. Notes explain requesting from the group, adding members, leaving the group and group settings."></figure>
+      <figure><img loading="lazy" decoding="async" width="1600" height="1910" src="../../assets/img/venmo-groups/add-people-annotated.webp" alt="Add People to Request screen listing group members with Split Equally and Custom Amount options. Notes explain choosing who to request from and how to split."></figure>
+      <figure><img loading="lazy" decoding="async" width="1600" height="1910" src="../../assets/img/venmo-groups/custom-amount-annotated.webp" alt="Custom Amounts screen with a per-person amount for each member and a built-in calculator keypad."></figure>
+      <figure><img loading="lazy" decoding="async" width="1600" height="1910" src="../../assets/img/venmo-groups/payment-annotated.webp" alt="Group chat with a pinned, collapsible Dinner at the Pub request showing each person's share and a Pay button, above normal chat messages."></figure>
+    </div>
+
+    <h2 id="research">Research</h2>
+    <h3>Competitive analysis</h3>
+    <div class="split-cards">
+      <div>
+        <h4>Cash App</h4>
+        <p class="label">Similarities with Venmo</p>
+        <ul><li>Target audience</li><li>Business goal</li><li>Between friends</li><li>Available to younger audiences (13-17) with parental permission</li><li>Available in US and UK</li><li>No group functionality either</li></ul>
+        <p class="label">Differences</p>
+        <ul><li>Focused on payments, no social aspect</li><li>Design is hyper simplified with all key features easily accessible</li></ul>
+      </div>
+      <div>
+        <h4>PayPal</h4>
+        <p class="label">Similarities with Venmo</p>
+        <ul><li>Sending payments is straightforward</li><li>Remembers recipients that are often paid or requested</li><li>Design is functional and expanded</li></ul>
+        <p class="label">Differences</p>
+        <ul><li>More business friendly</li><li>Stronger customer support</li><li>Refunds with other businesses</li><li>Has a “split the bill” feature (a request to several people, not a groups feature)</li></ul>
+        <p class="label">Improvement over Venmo</p>
+        <ul><li>Split the bill after the transaction</li></ul>
+      </div>
+      <div>
+        <h4>Up</h4>
+        <p class="label">Similarities with Venmo</p>
+        <ul><li>Target audience</li><li>Use cases</li><li>Recipients are remembered</li><li>Less business oriented</li></ul>
+        <p class="label">Differences</p>
+        <ul><li>“Social banking” vs social transactions</li><li>Splitting the bill and customizing each person’s amount</li><li>Transactions link to the splitting feature</li><li>Incentives for speedy payments</li></ul>
+        <p class="label">Improvements over Venmo</p>
+        <ul><li>Splitting the bill</li><li>Incentives for quicker payments</li></ul>
+      </div>
+    </div>
+
+    <h3>Selection process</h3>
+    <p>The target audience I picked was the North American audience, primarily because Venmo is one of the most widely used platforms in America. To find competitors worth analyzing, I looked for ones of the same scale or ones that provided a feature or service worth implementing.</p>
+    <p>First and foremost, Cash App achieves the same goals as Venmo with a much more simplified process. They emphasize simplicity and speed of transaction over all else, thus the name of the application. What they do nicely is advertise to all age groups through both design and the lifting of physical limitations such as age limits.</p>
+    <p>Second is the parent company of Venmo, PayPal. This platform has been around for a long time and has been accepted as a form of online payment for many years. Selecting the parent company to learn from was a no-brainer.</p>
+    <p>Lastly, a wildcard choice was Up, a social banking application used in the Australian market. While not in the North American market, it provided features that were much more convenient than Venmo’s current capabilities: bill splitting, incentives and transaction tracking. For the user, this meant being in control of their transaction from beginning to end.</p>
+
+    <h3>Personas</h3>
+    <div class="split-cards">
+      <div>
+        <h4>The high school or college student</h4>
+        <ul><li>Uses Venmo to pay friends for meals and activities</li><li>Pays for club dues</li><li>The highest percentage demographic of users</li><li>Uses Venmo essentially every day</li></ul>
+      </div>
+      <div>
+        <h4>Millennials and the working force</h4>
+        <ul><li>Splits meal bills between colleagues</li><li>Second largest demographic</li><li>Uses Venmo on the occasional night out with friends or colleagues after work</li></ul>
+      </div>
+      <div>
+        <h4>Parents and guardians</h4>
+        <ul><li>Sends money to their kids or family members</li><li>Not used often; could be replaced with a different platform</li><li>Smallest demographic</li></ul>
+      </div>
+    </div>
+
+    <h3>Brand and design system analysis</h3>
+    <p><strong>Concept:</strong> Quick, safe and social payments between friends.</p>
+    <p><strong>Values:</strong> Friendships are enhanced through the payments rather than complicated, creating memories and joy rather than being seen as a method of collection.</p>
+    <p><strong>Mission and vision:</strong> Connect businesses to people as friends, and improve the platform through the drive of the community.</p>
+    <p><strong>Customer experience:</strong> Small snippets into the lives of both the recipient and sender through the payment messages, which adds a fun aspect.</p>
+    <p><strong>Typography:</strong> Helvetica Neue as the primary typeface on all platforms, falling back to Helvetica, then Arial. Georgia as the secondary typeface, used mainly for document legibility. See Venmo’s <a href="https://venmo.com/about/brand/">visual branding guidelines</a>.</p>
+    <figure class="narrow">
+      <img loading="lazy" decoding="async" width="1088" height="1599" src="../../assets/img/venmo-groups/venmo-colors.webp" alt="Venmo color palette swatches: Venmo Blue 3D95CE, Very Light Grey DCE0E6, Light Grey BCC2CC, Grey 73777D and Dark Grey 343538.">
+      <figcaption>Color palette: Venmo Blue, very light grey, light grey, grey and dark grey.</figcaption>
+    </figure>
+
+    <h2 id="design">Define and design</h2>
+    <h3>Task flows</h3>
+    <figure class="wide">
+      <img loading="lazy" decoding="async" width="1415" height="706" src="../../assets/img/venmo-groups/task-flows-proper.webp" alt="Two task flows. Creating a friend group: home page, groups page, new group page, enter group details, add people, confirm, group room. Requesting from a friend group: group room, select request, request details, enter payment details, confirm.">
+    </figure>
+    <p>I based my earliest concepts on these two primary task flows, which captured the main idea and use cases of this feature.</p>
+
+    <h3>Sketches</h3>
+    <div class="gallery">
+      <figure><img loading="lazy" decoding="async" width="1600" height="2291" src="../../assets/img/venmo-groups/venmo-sketch-page-1.webp" alt="Pencil sketch of the Venmo home page with a new Groups icon in the navigation, and the groups list screen."></figure>
+      <figure><img loading="lazy" decoding="async" width="1600" height="2230" src="../../assets/img/venmo-groups/venmo-sketch-page-2.webp" alt="Pencil sketch of the create-a-group flow: adding people from a list, then a confirm group screen."></figure>
+      <figure><img loading="lazy" decoding="async" width="1600" height="2277" src="../../assets/img/venmo-groups/venmo-sketch-page-3.webp" alt="Pencil sketch of a group room with a pinned Dinner at the Pub payment and chat messages below."></figure>
+    </div>
+
+    <h3>Early lo-fi screens</h3>
+    <figure class="wide">
+      <img loading="lazy" decoding="async" width="1600" height="679" src="../../assets/img/venmo-groups/screens.webp" alt="Five early screens: home page, groups list, create group, confirm group, and a group chat with a pending payment.">
+    </figure>
+    <p>I began with designing the critical point screens within the flow, starting from the home page and ending with a page with a pending payment. I used a lot of tools and tricks to emulate the design style of Venmo as closely as possible. As I had no access to more specific design guidelines, a bulk of the early stage was spent searching for assets.</p>
+    <figure class="wide">
+      <img loading="lazy" decoding="async" width="1600" height="858" src="../../assets/img/venmo-groups/screens-hifi-v1.webp" alt="The first high-fidelity version: about a dozen screens covering the full group creation and request flow.">
+    </figure>
+    <p>In this iteration I added in-betweens and contextual items to flesh out the feeling of the application. This included imagery, iconography, and reworking the flow in places it wasn’t working.</p>
+    <p>At this point I began holding small feedback sessions between each major iteration to gather important data and points of improvement.</p>
+    <figure class="wide">
+      <img loading="lazy" decoding="async" width="1037" height="834" src="../../assets/img/venmo-groups/hifi-v3.webp" alt="Third high-fidelity iteration: the full set of screens arranged as connected flows.">
+    </figure>
+    <p>User participants asked me 3 critical questions that led to large improvements in my design:</p>
+    <ol>
+      <li>How do the group chats function with multiple pending payments?</li>
+      <li>Why did you make separate screens for equally split payments and custom payments?</li>
+      <li>What about problematic situations like trolls and spamming?</li>
+    </ol>
+    <p>This made me reconsider aspects of my design to make sure ethical design was being taken into consideration. In addition to ethics, I shortened each flow by condensing options onto one page.</p>
+
+    <h2 id="testing">Testing and the future</h2>
+    <h3>The prototype</h3>
+    <p>The prototype covers 3 primary use cases. It starts from the Venmo home page and ends with a successful request to your group of friends. <a href="https://www.figma.com/proto/zqjoOYrjHQ18epv6DUkYpf/Venmo-Friend-Group-Feature?node-id=78%3A8601&amp;page-id=78%3A8359&amp;scaling=min-zoom&amp;starting-point-node-id=78%3A8601">Open the Venmo Groups prototype in Figma</a>.</p>
+
+    <h3>Extra considerations</h3>
+    <div class="split-cards">
+      <div>
+        <img loading="lazy" decoding="async" width="780" height="1688" src="../../assets/img/venmo-groups/group-settings.webp" alt="Group Settings screen with notification and privacy preferences, plus member controls for permissions, pending invites and a blacklist.">
+        <h4>Group settings</h4>
+        <p>I created this feature to make Venmo more social, but with social aspects come social problems. To give users the tools to handle them, I added controls for both privacy and safety.</p>
+      </div>
+      <div>
+        <img loading="lazy" decoding="async" width="780" height="1688" src="../../assets/img/venmo-groups/notification-page.webp" alt="Notifications screen with a group invite to The Boys and a Join button, above general notifications.">
+        <h4>Notifications page</h4>
+        <p>A seldom-used part of the live app becomes a home for group invitations, group payment requests and other important notifications.</p>
+      </div>
+      <div>
+        <img loading="lazy" decoding="async" width="780" height="1688" src="../../assets/img/venmo-groups/payment-collapsed.webp" alt="Group chat with the pinned Dinner at the Pub request collapsed into a single slim bar.">
+        <h4>Collapsible request pin</h4>
+        <p>A pinned request keeps information from getting lost, but it takes up space. The collapsible component saves screen real estate. A more permanent fix is to let past transactions scroll by as chat items; all payments stay in the payment history menu.</p>
+      </div>
+    </div>
+
+    <h2 id="takeaways">Key takeaways</h2>
+    <h3>Improvements to be made</h3>
+    <ul>
+      <li>Some ideas need more explicit interactions to be conveyed clearly.</li>
+      <li>Further developing group controls and permissions would make users more inclined to use the feature.</li>
+      <li>A search flow for groups would show how users find the group they want to join.</li>
+    </ul>
+    <h3>Design</h3>
+    <ul>
+      <li>The design stayed in line with the current live application as far as possible.</li>
+      <li>Most users said the design already feels integrated into the app, even though it’s only a prototype.</li>
+      <li>The information organization and task flow felt very human and led to very few navigation mistakes.</li>
+    </ul>
+    <h3>Future considerations</h3>
+    <ul>
+      <li>More flexibility in the flows</li>
+      <li>Setting more group preferences at creation rather than after</li>
+      <li>Fleshing out blocking and blacklist features</li>
+    </ul>
+
+    <h3>Final remarks: a letter to you</h3>
+    <p>This project, while early in its development life, was fueled by one feeling: annoyance. I believe when an app can bring about a feeling of annoyance, there is a business idea, an improvement or an innovation waiting to be made.</p>
+    <p>This is how I began researching and designing this feature for Venmo. It was a personal vendetta. I genuinely hope I can someday work on something similar and watch it come to life.</p>
+    <p>Some things I learned while designing this feature:</p>
+    <ol>
+      <li>Ethical design should not be overlooked, especially in applications with person-to-person interactions.</li>
+      <li>It is naive to believe that your application can only be used for good.</li>
+      <li>Designing with a pre-established design guideline speeds up design iterations twofold.</li>
+      <li>Getting feedback and testing done earlier massively improves your project at the later stages of development.</li>
+    </ol>
+    <p>Thank you for taking the time to look through this case study.</p>
+  </article>
+  </div>
+
+  <nav class="next-project" aria-label="More projects">
+    <div><span class="label">Next case study</span><a class="big" href="../terra/">Terra</a></div>
+    <a class="text-link" href="../">All work</a>
+  </nav>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Jeffrey Oh. Built with HTML and CSS.</p>
+    <ul>
+      <li><a href="mailto:jeffrey.oh.hci@gmail.com">jeffrey.oh.hci@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/jsohci/">LinkedIn</a></li>
+      <li><a href="../../assets/files/jeffrey-oh-resume.pdf">Resume (PDF)</a></li>
+      <li><a href="../../why-me/">Why me</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

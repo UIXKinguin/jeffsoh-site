@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lost Ark Forums | Jeffrey Oh</title>
+<meta name="description" content="A mobile UI redesign of the Lost Ark game forums: clearer hierarchy, tabs for browsing, and faster tasks. A UX case study by Jeffrey Oh.">
+<link rel="canonical" href="https://www.jeffsoh.com/my-work/lost-ark-forums/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Lost Ark Forums | Jeffrey Oh">
+<meta property="og:description" content="A mobile UI redesign of the Lost Ark game forums: clearer hierarchy, tabs for browsing, and faster tasks. A UX case study by Jeffrey Oh.">
+<meta property="og:url" content="https://www.jeffsoh.com/my-work/lost-ark-forums/">
+<meta property="og:image" content="https://www.jeffsoh.com/assets/img/lost-ark-forums/concept-2.webp">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="preload" href="../../assets/fonts/geist-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="../../">Jeffrey Oh</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul><li><a href="../" aria-current="page">Work</a></li><li><a href="../../side-projects/">Projects</a></li><li><a href="../../about-me/">About</a></li><li><a href="../../contact/">Contact</a></li></ul>
+    </nav>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div class="container">
+  <header class="page-head">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol><li><a href="../">Work</a></li><li><span aria-current="page">Lost Ark Forums</span></li></ol>
+    </nav>
+    <h1>Lost Ark Forums mobile redesign</h1>
+    <p class="lede">A cleaner mobile forum for a game with over a million concurrent players.</p>
+    <dl class="meta">
+      <div><dt>Product</dt><dd>Concept mobile UI redesign</dd></div>
+      <div><dt>Role</dt><dd>UX Designer</dd></div>
+      <div><dt>Duration</dt><dd>2 weeks</dd></div>
+    </dl>
+    <figure class="cover">
+      <img width="1600" height="900" fetchpriority="high" src="../../assets/img/lost-ark-forums/concept-2.webp" alt="Five dark-themed redesigned forum screens side by side: home, categories, a post, search results and the menu.">
+    </figure>
+  </header>
+
+  <div class="case-layout">
+    <nav class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title">On this page</h2>
+        <ol>
+          <li><a href="#background">Background</a></li>
+          <li><a href="#highlights">UI highlights</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#design">Define and design</a></li>
+          <li><a href="#testing">Testing</a></li>
+          <li><a href="#remarks">Final remarks</a></li>
+        </ol>
+    </nav>
+    <article class="prose">
+    <h2 id="background">Background</h2>
+    <p>Why did I think this website needed a redesign in the first place? In the beginning, this project was not something I would have considered. But my passion for the game lit a fire under me. Lost Ark was developed by the Korean studio Smilegate and published by Amazon Games in the West. Its concurrent players number over 1 million, and concurrent forum users number at least 100,000.</p>
+    <h3>Problem</h3>
+    <p>Lost Ark is a PC game, so naturally the forums are optimized for desktop. Looking at the current mobile view, I could confidently say it was lacking in a few areas. To do this product justice, I took it apart from the bottom up and focused on the mobile UI, which I felt had been neglected because of the nature of the platform.</p>
+    <h3>Goals</h3>
+    <ol>
+      <li>Improve visual hierarchy on the mobile website</li>
+      <li>Organize the information to be more readable and user friendly</li>
+      <li>Create a more memorable and optimized user experience</li>
+    </ol>
+
+    <h2 id="highlights">UI highlights</h2>
+    <div class="gallery">
+      <figure><img loading="lazy" decoding="async" width="838" height="1080" src="../../assets/img/lost-ark-forums/developer-page-annotated.webp" alt="Redesigned home page on the Devs tab. Notes: the home page is now organized by 4 tabs, developer posts carry an easily visible badge, a pin icon marks important posts, and a sort bar orders posts by recency or popularity."></figure>
+      <figure><img loading="lazy" decoding="async" width="723" height="1080" src="../../assets/img/lost-ark-forums/developer-page-annotated-1.webp" alt="Redesigned side menu with a New Post button, then Posts, Inbox and Bookmarks. Notes: the menu was reworked from two columns into one, and secondary options are grouped at the bottom."></figure>
+      <figure><img loading="lazy" decoding="async" width="723" height="1080" src="../../assets/img/lost-ark-forums/developer-page-annotated-2.webp" alt="Search results for the word Quest with tabs for top, new, users and categories. Notes: the search query stays visible, and the keyword is highlighted in each result."></figure>
+    </div>
+
+    <h2 id="research">Research</h2>
+    <p class="kicker">Heuristic analysis, personas and competitive analysis.</p>
+    <h3>Heuristic analysis</h3>
+    <figure>
+      <img loading="lazy" decoding="async" width="379" height="848" src="../../assets/img/lost-ark-forums/current-homepage.webp" alt="The current Lost Ark forums mobile home page: a large character banner, small category tabs and stacked category cards such as Official News and Game Feedback.">
+      <figcaption>The live mobile forum before the redesign.</figcaption>
+    </figure>
+    <h3>Personas</h3>
+    <div class="split-cards">
+      <div><h4>The developers</h4><p>They designed both the game and the forums. They visit to listen for major problems, understand the state of the game, and chime in with positivity.</p></div>
+      <div><h4>The casual user</h4><p>Rarely visits the forums or similar platforms. Usually looking for popular news or information. More used to browsing social media than forums.</p></div>
+      <div><h4>The super user</h4><p>Understands the game to its core, posts often, and wants as much fine-grained detail as possible. Keen on developer opinions. Used to forum layouts and features.</p></div>
+    </div>
+    <h3>Competitive analysis</h3>
+    <div class="gallery two">
+      <figure><img loading="lazy" decoding="async" width="1600" height="784" src="../../assets/img/lost-ark-forums/reddit.webp" alt="Reddit's desktop layout: trending posts across the top, a post feed in the middle and community details on the right."><figcaption>Reddit</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" width="1600" height="707" src="../../assets/img/lost-ark-forums/bungie.webp" alt="Bungie's game forums: a banner, a category sidebar on the left and a list of topics."><figcaption>Bungie forums</figcaption></figure>
+    </div>
+    <p>To design a cleaner forum, I looked at two platforms. The first was Reddit, arguably the largest and most popular forum today. Studying their search and filters taught me how to design search for a platform that scales.</p>
+    <p>I referenced the Bungie forums to see how they organized information. Reddit is good for browsing, but it’s harder to find posts that hold helpful information. Bungie’s is also a game forum, so analyzing its patterns helped me build a better information layout.</p>
+
+    <h2 id="design">Define and design</h2>
+    <p>In this phase I made sure my design would not remove any existing functionality or sever any connections between live pages. To get there, I kept iterating through user flows and sketches until I was satisfied.</p>
+    <h3>User flow</h3>
+    <figure class="wide">
+      <img loading="lazy" decoding="async" width="1333" height="750" src="../../assets/img/lost-ark-forums/user-flow-search-for-post.webp" alt="User flow for finding a post: from the forum home page, users either search, or browse categories, latest, top or the developer tracker, and all paths end at the selected post.">
+      <figcaption>One comprehensive user flow instead of several linked task flows, because browsing is free-flowing.</figcaption>
+    </figure>
+    <h3>Sketches</h3>
+    <div class="gallery two">
+      <figure><img loading="lazy" decoding="async" width="1600" height="1920" src="../../assets/img/lost-ark-forums/lost-ark-sketch-1-281-29.webp" alt="Pencil sketch of the forum home page with a search bar, filter toggles, posts and a side menu."><figcaption>An early, more Reddit-like home screen with an improved navigation sidebar, and a possible autofill search dropdown.</figcaption></figure>
+      <figure><img loading="lazy" decoding="async" width="1600" height="1715" src="../../assets/img/lost-ark-forums/sketch-2.webp" alt="Pencil sketch of an alternative home page with the search bar and Top, New and Dev filters lower on the page."><figcaption>Another home page with filters and search lower in the fold, spreading out elements to avoid overwhelming the user.</figcaption></figure>
+    </div>
+    <h3>Screens</h3>
+    <div class="gallery">
+      <figure><img loading="lazy" decoding="async" width="360" height="831" src="../../assets/img/lost-ark-forums/category-page-official-news-most-popular.webp" alt="Official News category page sorted by most popular, with developer posts and vote counts."></figure>
+      <figure><img loading="lazy" decoding="async" width="360" height="800" src="../../assets/img/lost-ark-forums/devs-tab-homepage.webp" alt="Home page on the Devs tab, listing developer posts and comments."></figure>
+      <figure><img loading="lazy" decoding="async" width="360" height="841" src="../../assets/img/lost-ark-forums/search-results-posts-tab.webp" alt="Search results for Quest on the New tab, with the keyword highlighted in each post."></figure>
+      <figure><img loading="lazy" decoding="async" width="360" height="800" src="../../assets/img/lost-ark-forums/search-results-users-tab.webp" alt="Search results for Quest on the Users tab, listing matching user profiles."></figure>
+      <figure><img loading="lazy" decoding="async" width="360" height="800" src="../../assets/img/lost-ark-forums/o-keyboard.webp" alt="New post editor with a category picker, title, formatting toolbar, body text and a Post button."></figure>
+      <figure><img loading="lazy" decoding="async" width="360" height="675" src="../../assets/img/lost-ark-forums/your-post-post-success-gone.webp" alt="A published post about server maintenance, with reply and bookmark actions and no comments yet."></figure>
+    </div>
+    <h3>UI kit</h3>
+    <figure>
+      <img loading="lazy" decoding="async" width="360" height="988" src="../../assets/img/lost-ark-forums/ui-kit.webp" alt="Lost Ark UI kit: Proxima Nova type sizes, a yellow, black and white color palette, icons for search, menu, votes, comments and bookmarks, and post components.">
+    </figure>
+
+    <h2 id="testing">Testing</h2>
+    <h3>Prototype</h3>
+    <p>At this stage I expanded the pages needed for an MVP covering 3 main tasks: browsing, searching and posting. <a href="https://www.figma.com/proto/Zhk3coudIKcIbM9bwwus08/Lost-Ark-Forum-UI-Revamp?node-id=80%3A4545&amp;page-id=25%3A10148&amp;scaling=scale-down&amp;starting-point-node-id=80%3A3203">Open the Lost Ark prototype in Figma</a>.</p>
+    <h3>Usability testing findings</h3>
+    <div class="split-cards">
+      <div><h4>Navigation</h4><ul><li>Navigation considerably improved</li><li>Browsing tabs sped up content consumption</li><li>Creating a new post needs more entry points</li><li>Vital information is more visible and organized</li></ul></div>
+      <div><h4>Design</h4><ul><li>Branding stayed consistent with the live version, with small color swaps</li><li>Better spacing gave the screen room to breathe</li></ul></div>
+      <div><h4>General</h4><ul><li>Tasks took about 10 seconds less on average</li><li>Stronger visual feedback was suggested</li><li>The language toggle should stay, nested in the menu</li></ul></div>
+      <div><h4>Considerations</h4><ul><li>A light mode design</li><li>More personality in user profiles</li><li>Mega threads</li><li>Direct messaging</li></ul></div>
+    </div>
+
+    <h2 id="remarks">Final remarks</h2>
+    <p>What started as a passion project turned into something tangible. A warm reception motivated me to keep improving the design.</p>
+    <p>Over 2 weeks I went through about 5 design iterations, adding components, removing what wasn’t needed, and refining the experience within an 80-hour budget. It’s not a perfect product, but I achieved my 3 initial goals: better visual hierarchy, more readable information, and a more memorable experience.</p>
+    <p>Something I learned is to never get too attached to your designs. Seeing your work scrapped or changed can be disheartening, but it hasn’t been thrown away. It has evolved and improved through the iterative design process.</p>
+    <p>Next, I’d refine the design so no key features are forgotten, so that if it replaced the old system, no users would be left out. This prototype covered 3 primary use cases and left out sub-cases like user settings and bookmarks, which matter just as much.</p>
+    <p>Thank you for taking the time to read through this case study.</p>
+  </article>
+  </div>
+
+  <nav class="next-project" aria-label="More projects">
+    <div><span class="label">Next case study</span><a class="big" href="../zeit-website/">Zeit</a></div>
+    <a class="text-link" href="../">All work</a>
+  </nav>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; 2026 Jeffrey Oh. Built with HTML and CSS.</p>
+    <ul>
+      <li><a href="mailto:jeffrey.oh.hci@gmail.com">jeffrey.oh.hci@gmail.com</a></li>
+      <li><a href="https://www.linkedin.com/in/jsohci/">LinkedIn</a></li>
+      <li><a href="../../assets/files/jeffrey-oh-resume.pdf">Resume (PDF)</a></li>
+      <li><a href="../../why-me/">Why me</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,547 @@
+{
+ "_source/images/about-me__20250511_194359-476d.jpg": {
+  "path": "assets/img/about-me/20250511-194359-476d.webp",
+  "w": 1512,
+  "h": 2016
+ },
+ "_source/images/general-2__Molla_Thumbnail.png": {
+  "path": "assets/img/general-2/molla-thumbnail.webp",
+  "w": 1600,
+  "h": 900
+ },
+ "_source/images/general-2__hirzul-maulana-RTqERA_uZqI-unsplash.jpg": {
+  "path": "assets/img/general-2/hirzul-maulana-rtqera-uzqi-unsplash.webp",
+  "w": 1600,
+  "h": 900
+ },
+ "_source/images/home__Cover.png": {
+  "path": "assets/img/home/cover.webp",
+  "w": 1600,
+  "h": 900
+ },
+ "_source/images/home__clay-banks-u27Rrbs9Dwc-unsplash.jpg": {
+  "path": "assets/img/home/clay-banks-u27rrbs9dwc-unsplash.webp",
+  "w": 1600,
+  "h": 1068
+ },
+ "_source/images/home__unsplash-image-ETRPjvb0KM0.jpg": {
+  "path": "assets/img/home/unsplash-image-etrpjvb0km0.webp",
+  "w": 1600,
+  "h": 1067
+ },
+ "_source/images/my-work__2nd_Milestone.png": {
+  "path": "assets/img/my-work/2nd-milestone.webp",
+  "w": 1440,
+  "h": 1751
+ },
+ "_source/images/my-work__Cover.png": {
+  "path": "assets/img/my-work/cover.webp",
+  "w": 1600,
+  "h": 1032
+ },
+ "_source/images/my-work__Cover_2_v2.png": {
+  "path": "assets/img/my-work/cover-2-v2.webp",
+  "w": 1600,
+  "h": 1225
+ },
+ "_source/images/my-work__PSU_Eats_Landing_Page.PNG": {
+  "path": "assets/img/my-work/psu-eats-landing-page.webp",
+  "w": 1600,
+  "h": 900
+ },
+ "_source/images/my-work__lost-ark-forums__Background_Imagery.jpg": {
+  "path": "assets/img/lost-ark-forums/background-imagery.webp",
+  "w": 1600,
+  "h": 771
+ },
+ "_source/images/my-work__lost-ark-forums__Category_Page__Official_News_Most_Popular.png": {
+  "path": "assets/img/lost-ark-forums/category-page-official-news-most-popular.webp",
+  "w": 360,
+  "h": 831
+ },
+ "_source/images/my-work__lost-ark-forums__Current_Homepage.PNG": {
+  "path": "assets/img/lost-ark-forums/current-homepage.webp",
+  "w": 379,
+  "h": 848
+ },
+ "_source/images/my-work__lost-ark-forums__Developer_Page_Annotated-1.png": {
+  "path": "assets/img/lost-ark-forums/developer-page-annotated-1.webp",
+  "w": 723,
+  "h": 1080
+ },
+ "_source/images/my-work__lost-ark-forums__Developer_Page_Annotated-2.png": {
+  "path": "assets/img/lost-ark-forums/developer-page-annotated-2.webp",
+  "w": 723,
+  "h": 1080
+ },
+ "_source/images/my-work__lost-ark-forums__Developer_Page_Annotated.png": {
+  "path": "assets/img/lost-ark-forums/developer-page-annotated.webp",
+  "w": 838,
+  "h": 1080
+ },
+ "_source/images/my-work__lost-ark-forums__Devs_Tab_Homepage.png": {
+  "path": "assets/img/lost-ark-forums/devs-tab-homepage.webp",
+  "w": 360,
+  "h": 800
+ },
+ "_source/images/my-work__lost-ark-forums__Lost_ark_Sketch_1__281_29.jpg": {
+  "path": "assets/img/lost-ark-forums/lost-ark-sketch-1-281-29.webp",
+  "w": 1600,
+  "h": 1920
+ },
+ "_source/images/my-work__lost-ark-forums__Search_Results_Posts_Tab.png": {
+  "path": "assets/img/lost-ark-forums/search-results-posts-tab.webp",
+  "w": 360,
+  "h": 841
+ },
+ "_source/images/my-work__lost-ark-forums__Search_Results_Users_Tab.png": {
+  "path": "assets/img/lost-ark-forums/search-results-users-tab.webp",
+  "w": 360,
+  "h": 800
+ },
+ "_source/images/my-work__lost-ark-forums__Sketch_2.jpg": {
+  "path": "assets/img/lost-ark-forums/sketch-2.webp",
+  "w": 1600,
+  "h": 1715
+ },
+ "_source/images/my-work__lost-ark-forums__UI_Kit.png": {
+  "path": "assets/img/lost-ark-forums/ui-kit.webp",
+  "w": 360,
+  "h": 988
+ },
+ "_source/images/my-work__lost-ark-forums__User_Flow_Search_for_Post.jpg": {
+  "path": "assets/img/lost-ark-forums/user-flow-search-for-post.webp",
+  "w": 1333,
+  "h": 750
+ },
+ "_source/images/my-work__lost-ark-forums__Your_Post_Post_Success_Gone.png": {
+  "path": "assets/img/lost-ark-forums/your-post-post-success-gone.webp",
+  "w": 360,
+  "h": 675
+ },
+ "_source/images/my-work__lost-ark-forums__background_4.jpg": {
+  "path": "assets/img/lost-ark-forums/background-4.webp",
+  "w": 1600,
+  "h": 900
+ },
+ "_source/images/my-work__lost-ark-forums__background_image_2.jpg": {
+  "path": "assets/img/lost-ark-forums/background-image-2.webp",
+  "w": 1600,
+  "h": 761
+ },
+ "_source/images/my-work__lost-ark-forums__background_image_3.jpg": {
+  "path": "assets/img/lost-ark-forums/background-image-3.webp",
+  "w": 1600,
+  "h": 765
+ },
+ "_source/images/my-work__lost-ark-forums__bungie.PNG": {
+  "path": "assets/img/lost-ark-forums/bungie.webp",
+  "w": 1600,
+  "h": 707
+ },
+ "_source/images/my-work__lost-ark-forums__concept_2.jpg": {
+  "path": "assets/img/lost-ark-forums/concept-2.webp",
+  "w": 1600,
+  "h": 900
+ },
+ "_source/images/my-work__lost-ark-forums__o_Keyboard.png": {
+  "path": "assets/img/lost-ark-forums/o-keyboard.webp",
+  "w": 360,
+  "h": 800
+ },
+ "_source/images/my-work__lost-ark-forums__persona_2B1.jpg": {
+  "path": "assets/img/lost-ark-forums/persona-2b1.webp",
+  "w": 1600,
+  "h": 1200
+ },
+ "_source/images/my-work__lost-ark-forums__persona_3.jpg": {
+  "path": "assets/img/lost-ark-forums/persona-3.webp",
+  "w": 1600,
+  "h": 2400
+ },
+ "_source/images/my-work__lost-ark-forums__persona_4.jpg": {
+  "path": "assets/img/lost-ark-forums/persona-4.webp",
+  "w": 1600,
+  "h": 1067
+ },
+ "_source/images/my-work__lost-ark-forums__reddit.PNG": {
+  "path": "assets/img/lost-ark-forums/reddit.webp",
+  "w": 1600,
+  "h": 784
+ },
+ "_source/images/my-work__myrelocation-guide__2nd_Milestone.png": {
+  "path": "assets/img/myrelocation-guide/2nd-milestone.webp",
+  "w": 1440,
+  "h": 1751
+ },
+ "_source/images/my-work__myrelocation-guide__Article_Example_Medium_Content_House_Finding.png": {
+  "path": "assets/img/myrelocation-guide/article-example-medium-content-house-finding.webp",
+  "w": 1440,
+  "h": 3026
+ },
+ "_source/images/my-work__myrelocation-guide__Article_Example_Medium_Content_Transportaiton.png": {
+  "path": "assets/img/myrelocation-guide/article-example-medium-content-transportaiton.webp",
+  "w": 1440,
+  "h": 3652
+ },
+ "_source/images/my-work__myrelocation-guide__Day_-1.jpg": {
+  "path": "assets/img/myrelocation-guide/day-1.webp",
+  "w": 1440,
+  "h": 1973
+ },
+ "_source/images/my-work__myrelocation-guide__Day_0_Experience_Intake__E2_80_93_1.jpg": {
+  "path": "assets/img/myrelocation-guide/day-0-experience-intake-1.webp",
+  "w": 1152,
+  "h": 648
+ },
+ "_source/images/my-work__myrelocation-guide__Day_0_Experience__E2_80_93_Tutorial_Modal__E2_80_93_Step_4.png": {
+  "path": "assets/img/myrelocation-guide/day-0-experience-tutorial-modal-step-4.webp",
+  "w": 1440,
+  "h": 1751
+ },
+ "_source/images/my-work__myrelocation-guide__annie-spratt-qyAka7W5uMY-unsplash.jpg": {
+  "path": "assets/img/myrelocation-guide/annie-spratt-qyaka7w5umy-unsplash.webp",
+  "w": 1600,
+  "h": 1264
+ },
+ "_source/images/my-work__myrelocation-guide__unsplash-image-guP3BPyB99I.jpg": {
+  "path": "assets/img/myrelocation-guide/unsplash-image-gup3bpyb99i.webp",
+  "w": 1600,
+  "h": 1600
+ },
+ "_source/images/my-work__penn-state-eats__PSU_Eats_Landing_Page.PNG": {
+  "path": "assets/img/penn-state-eats/psu-eats-landing-page.webp",
+  "w": 1600,
+  "h": 900
+ },
+ "_source/images/my-work__penn-state-eats__PSU_Eats_Ordering_Page.PNG": {
+  "path": "assets/img/penn-state-eats/psu-eats-ordering-page.webp",
+  "w": 1600,
+  "h": 900
+ },
+ "_source/images/my-work__penn-state-eats__PSU_eats_Order_Summary.PNG": {
+  "path": "assets/img/penn-state-eats/psu-eats-order-summary.webp",
+  "w": 1600,
+  "h": 900
+ },
+ "_source/images/my-work__terra__Add_Location.png": {
+  "path": "assets/img/terra/add-location.webp",
+  "w": 720,
+  "h": 1600
+ },
+ "_source/images/my-work__terra__Add_a_task_v2.jpg": {
+  "path": "assets/img/terra/add-a-task-v2.webp",
+  "w": 1507,
+  "h": 663
+ },
+ "_source/images/my-work__terra__Calendar_View.png": {
+  "path": "assets/img/terra/calendar-view.webp",
+  "w": 720,
+  "h": 1600
+ },
+ "_source/images/my-work__terra__Cardsort.PNG": {
+  "path": "assets/img/terra/cardsort.webp",
+  "w": 484,
+  "h": 589
+ },
+ "_source/images/my-work__terra__Cover.png": {
+  "path": "assets/img/terra/cover.webp",
+  "w": 1600,
+  "h": 1032
+ },
+ "_source/images/my-work__terra__Home_Page.png": {
+  "path": "assets/img/terra/home-page.webp",
+  "w": 720,
+  "h": 1600
+ },
+ "_source/images/my-work__terra__Lens_Result.png": {
+  "path": "assets/img/terra/lens-result.webp",
+  "w": 720,
+  "h": 1600
+ },
+ "_source/images/my-work__terra__Light_Settings.png": {
+  "path": "assets/img/terra/light-settings.webp",
+  "w": 720,
+  "h": 1600
+ },
+ "_source/images/my-work__terra__Plant_Details.png": {
+  "path": "assets/img/terra/plant-details.webp",
+  "w": 720,
+  "h": 1600
+ },
+ "_source/images/my-work__terra__Plant_Details_Auto___Details_Filled.png": {
+  "path": "assets/img/terra/plant-details-auto-details-filled.webp",
+  "w": 720,
+  "h": 1600
+ },
+ "_source/images/my-work__terra__Plants.png": {
+  "path": "assets/img/terra/plants.webp",
+  "w": 720,
+  "h": 1600
+ },
+ "_source/images/my-work__terra__Profile_Page.png": {
+  "path": "assets/img/terra/profile-page.webp",
+  "w": 720,
+  "h": 1730
+ },
+ "_source/images/my-work__terra__Screenshot_20220317-094036.png": {
+  "path": "assets/img/terra/screenshot-20220317-094036.webp",
+  "w": 864,
+  "h": 1920
+ },
+ "_source/images/my-work__terra__Screenshot_20220317-094139.png": {
+  "path": "assets/img/terra/screenshot-20220317-094139.webp",
+  "w": 864,
+  "h": 1920
+ },
+ "_source/images/my-work__terra__Screenshot_20220317-094214.png": {
+  "path": "assets/img/terra/screenshot-20220317-094214.webp",
+  "w": 864,
+  "h": 1920
+ },
+ "_source/images/my-work__terra__Sitemap_-_Terra_SItemap.jpg": {
+  "path": "assets/img/terra/sitemap-terra-sitemap.webp",
+  "w": 1518,
+  "h": 658
+ },
+ "_source/images/my-work__terra__Task_Flows.jpg": {
+  "path": "assets/img/terra/task-flows.webp",
+  "w": 1116,
+  "h": 895
+ },
+ "_source/images/my-work__terra__Terra_sketch_login_and_tasks.jpg": {
+  "path": "assets/img/terra/terra-sketch-login-and-tasks.webp",
+  "w": 1600,
+  "h": 2195
+ },
+ "_source/images/my-work__terra__advanced.jpg": {
+  "path": "assets/img/terra/advanced.webp",
+  "w": 1600,
+  "h": 1067
+ },
+ "_source/images/my-work__terra__beginner.jpg": {
+  "path": "assets/img/terra/beginner.webp",
+  "w": 1600,
+  "h": 1067
+ },
+ "_source/images/my-work__terra__intermediate.jpg": {
+  "path": "assets/img/terra/intermediate.webp",
+  "w": 1600,
+  "h": 2400
+ },
+ "_source/images/my-work__terra__terra_plants_page.jpg": {
+  "path": "assets/img/terra/terra-plants-page.webp",
+  "w": 1600,
+  "h": 1122
+ },
+ "_source/images/my-work__terra__unsplash-image-Q0IrpWQIMR4.jpg": {
+  "path": "assets/img/terra/unsplash-image-q0irpwqimr4.webp",
+  "w": 1600,
+  "h": 1162
+ },
+ "_source/images/my-work__terra__unsplash-image-W_ISm5LwKHQ.jpg": {
+  "path": "assets/img/terra/unsplash-image-w-ism5lwkhq.webp",
+  "w": 1600,
+  "h": 2400
+ },
+ "_source/images/my-work__terra__unsplash-image-a7Woj8W6J0s.jpg": {
+  "path": "assets/img/terra/unsplash-image-a7woj8w6j0s.webp",
+  "w": 1600,
+  "h": 1091
+ },
+ "_source/images/my-work__terra__unsplash-image-vrbZVyX2k4I.jpg": {
+  "path": "assets/img/terra/unsplash-image-vrbzvyx2k4i.webp",
+  "w": 1600,
+  "h": 1067
+ },
+ "_source/images/my-work__venmo-groups__Add_People_Annotated.png": {
+  "path": "assets/img/venmo-groups/add-people-annotated.webp",
+  "w": 1600,
+  "h": 1910
+ },
+ "_source/images/my-work__venmo-groups__Cover.png": {
+  "path": "assets/img/venmo-groups/cover.webp",
+  "w": 1600,
+  "h": 900
+ },
+ "_source/images/my-work__venmo-groups__Custom_Amount_Annotated.png": {
+  "path": "assets/img/venmo-groups/custom-amount-annotated.webp",
+  "w": 1600,
+  "h": 1910
+ },
+ "_source/images/my-work__venmo-groups__Group_Settings.png": {
+  "path": "assets/img/venmo-groups/group-settings.webp",
+  "w": 780,
+  "h": 1688
+ },
+ "_source/images/my-work__venmo-groups__Hifi_V3.PNG": {
+  "path": "assets/img/venmo-groups/hifi-v3.webp",
+  "w": 1037,
+  "h": 834
+ },
+ "_source/images/my-work__venmo-groups__New_Room_Annotated.png": {
+  "path": "assets/img/venmo-groups/new-room-annotated.webp",
+  "w": 1600,
+  "h": 1910
+ },
+ "_source/images/my-work__venmo-groups__Notification_Page.png": {
+  "path": "assets/img/venmo-groups/notification-page.webp",
+  "w": 780,
+  "h": 1688
+ },
+ "_source/images/my-work__venmo-groups__Payment_Annotated.png": {
+  "path": "assets/img/venmo-groups/payment-annotated.webp",
+  "w": 1600,
+  "h": 1910
+ },
+ "_source/images/my-work__venmo-groups__Payment_Collapsed.png": {
+  "path": "assets/img/venmo-groups/payment-collapsed.webp",
+  "w": 780,
+  "h": 1688
+ },
+ "_source/images/my-work__venmo-groups__Screens.png": {
+  "path": "assets/img/venmo-groups/screens.webp",
+  "w": 1600,
+  "h": 679
+ },
+ "_source/images/my-work__venmo-groups__Screens_hifi_v1.png": {
+  "path": "assets/img/venmo-groups/screens-hifi-v1.webp",
+  "w": 1600,
+  "h": 858
+ },
+ "_source/images/my-work__venmo-groups__Sidebar_Annotated.png": {
+  "path": "assets/img/venmo-groups/sidebar-annotated.webp",
+  "w": 1600,
+  "h": 1910
+ },
+ "_source/images/my-work__venmo-groups__Task_Flows_Proper.jpg": {
+  "path": "assets/img/venmo-groups/task-flows-proper.webp",
+  "w": 1415,
+  "h": 706
+ },
+ "_source/images/my-work__venmo-groups__Venmo_Colors.png": {
+  "path": "assets/img/venmo-groups/venmo-colors.webp",
+  "w": 1088,
+  "h": 1599
+ },
+ "_source/images/my-work__venmo-groups__office_workers.jpg": {
+  "path": "assets/img/venmo-groups/office-workers.webp",
+  "w": 1600,
+  "h": 1067
+ },
+ "_source/images/my-work__venmo-groups__parents.jpg": {
+  "path": "assets/img/venmo-groups/parents.webp",
+  "w": 1600,
+  "h": 1067
+ },
+ "_source/images/my-work__venmo-groups__students.jpg": {
+  "path": "assets/img/venmo-groups/students.webp",
+  "w": 1600,
+  "h": 1067
+ },
+ "_source/images/my-work__venmo-groups__venmo_sketch_page_1.jpg": {
+  "path": "assets/img/venmo-groups/venmo-sketch-page-1.webp",
+  "w": 1600,
+  "h": 2291
+ },
+ "_source/images/my-work__venmo-groups__venmo_sketch_page_2.jpg": {
+  "path": "assets/img/venmo-groups/venmo-sketch-page-2.webp",
+  "w": 1600,
+  "h": 2230
+ },
+ "_source/images/my-work__venmo-groups__venmo_sketch_page_3.jpg": {
+  "path": "assets/img/venmo-groups/venmo-sketch-page-3.webp",
+  "w": 1600,
+  "h": 2277
+ },
+ "_source/images/my-work__zeit-website__Brand_Logo_Ideas.png": {
+  "path": "assets/img/zeit-website/brand-logo-ideas.webp",
+  "w": 1089,
+  "h": 960
+ },
+ "_source/images/my-work__zeit-website__Cover_2_v2.png": {
+  "path": "assets/img/zeit-website/cover-2-v2.webp",
+  "w": 1600,
+  "h": 1225
+ },
+ "_source/images/my-work__zeit-website__Home.jpg": {
+  "path": "assets/img/zeit-website/home.webp",
+  "w": 1440,
+  "h": 2714
+ },
+ "_source/images/my-work__zeit-website__Research_Ramp-Up.png": {
+  "path": "assets/img/zeit-website/research-ramp-up.webp",
+  "w": 1600,
+  "h": 804
+ },
+ "_source/images/my-work__zeit-website__SItemap.jpg": {
+  "path": "assets/img/zeit-website/sitemap.webp",
+  "w": 1223,
+  "h": 817
+ },
+ "_source/images/my-work__zeit-website__Sitemap_-_Frame_2.jpg": {
+  "path": "assets/img/zeit-website/sitemap-frame-2.webp",
+  "w": 1505,
+  "h": 664
+ },
+ "_source/images/my-work__zeit-website__Sitemap_-_Frame_3.jpg": {
+  "path": "assets/img/zeit-website/sitemap-frame-3.webp",
+  "w": 1600,
+  "h": 474
+ },
+ "_source/images/my-work__zeit-website__Sitemap_-_Frame_4.jpg": {
+  "path": "assets/img/zeit-website/sitemap-frame-4.webp",
+  "w": 1498,
+  "h": 667
+ },
+ "_source/images/my-work__zeit-website__UI_Kit_Presentation.png": {
+  "path": "assets/img/zeit-website/ui-kit-presentation.webp",
+  "w": 1440,
+  "h": 13259
+ },
+ "_source/images/my-work__zeit-website__User_Persona_Frequent_Flyer_Flynn_Rider.png": {
+  "path": "assets/img/zeit-website/user-persona-frequent-flyer-flynn-rider.webp",
+  "w": 1140,
+  "h": 889
+ },
+ "_source/images/my-work__zeit-website__Zeit_Explore_wireframe.png": {
+  "path": "assets/img/zeit-website/zeit-explore-wireframe.webp",
+  "w": 1440,
+  "h": 2568
+ },
+ "_source/images/my-work__zeit-website__Zeit_Homepage_wireframe.png": {
+  "path": "assets/img/zeit-website/zeit-homepage-wireframe.webp",
+  "w": 1440,
+  "h": 2978
+ },
+ "_source/images/why-me__Cover.png": {
+  "path": "assets/img/why-me/cover.webp",
+  "w": 1600,
+  "h": 900
+ },
+ "_source/images/why-me__communicate.jpg": {
+  "path": "assets/img/why-me/communicate.webp",
+  "w": 1600,
+  "h": 1067
+ },
+ "_source/images/why-me__randalyn-hill-Zl2yVDTGByY-unsplash.jpg": {
+  "path": "assets/img/why-me/randalyn-hill-zl2yvdtgbyy-unsplash.webp",
+  "w": 1600,
+  "h": 1067
+ },
+ "_source/images/why-me__think.jpg": {
+  "path": "assets/img/why-me/think.webp",
+  "w": 1600,
+  "h": 1067
+ },
+ "_source/images/why-me__unsplash-image-IQeBZm8F-M4.jpg": {
+  "path": "assets/img/why-me/unsplash-image-iqebzm8f-m4.webp",
+  "w": 1600,
+  "h": 1011
+ },
+ "_source/images/why-me__unsplash-image-nvzvOPQW0gc.jpg": {
+  "path": "assets/img/why-me/unsplash-image-nvzvopqw0gc.webp",
+  "w": 1600,
+  "h": 1066
+ }
+}

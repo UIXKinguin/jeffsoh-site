@@ -1,0 +1,13 @@
+# Raw Squarespace downloads used during migration (large; originals kept locally only)
+_source/images/
+_source/raw/
+_source/drafts/
+_source/*.png
+.playwright-cli/
+__pycache__/
+.DS_Store
+Thumbs.db
+# Migration scrape data (contains old contact details) and local tooling
+_source/site.json
+_source/fonts.css
+.claude/
