@@ -161,6 +161,7 @@ def write(path, doc):
 
 
 def redirect_page(old, new):
+    rel = posixpath.relpath(new, old) + "/"  # relative so it also works under a sub-path
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -168,7 +169,7 @@ def redirect_page(old, new):
 <title>Moved</title>
 <meta name="robots" content="noindex">
 <link rel="canonical" href="{SITE_URL}{new}">
-<meta http-equiv="refresh" content="0; url={new}">
+<meta http-equiv="refresh" content="0; url={rel}">
 </head>
 <body>
 <p>This page has moved to <a href="{new}">{SITE_URL}{new}</a>.</p>
