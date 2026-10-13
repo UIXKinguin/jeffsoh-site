@@ -53,7 +53,7 @@ def header(nav_key):
 def footer():
     return f"""<footer class="site-footer">
   <div class="container">
-    <p>&copy; {date.today().year} Jeffrey Oh. Built with HTML and CSS.</p>
+    <p>&copy; {date.today().year} Jeffrey Oh</p>
     <ul>
       <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
       <li><a href="https://www.linkedin.com/in/jsohci/">LinkedIn</a></li>
