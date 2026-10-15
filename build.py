@@ -65,7 +65,7 @@ def footer():
     <ul>
       <li><a href="mailto:{EMAIL}">{EMAIL}</a></li>
       <li><a href="https://www.linkedin.com/in/jsohci/">LinkedIn</a></li>
-      <li><a href="/assets/files/jeffrey-oh-resume.pdf">Resume (PDF)</a></li>
+      <li><a href="/assets/files/jeffrey-oh-resume.pdf" target="_blank" rel="noopener">Resume (PDF<span class="visually-hidden">, opens in a new tab</span>)</a></li>
       <li><a href="/why-me/">Why me</a></li>
     </ul>
   </div>
