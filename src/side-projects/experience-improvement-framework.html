@@ -5,7 +5,7 @@
       <ol><li><a href="/side-projects/">Research and projects</a></li><li><span aria-current="page">Experience Improvement Framework</span></li></ol>
     </nav>
     <h1>Experience Improvement Framework</h1>
-    <p class="lede">An industry-ready framework for spotting and fixing dark patterns in mobile games.</p>
+    <p class="lede">A practical framework for spotting and fixing dark patterns in mobile games.</p>
     <dl class="meta">
       <div><dt>Field</dt><dd>Human-Computer Interaction</dd></div>
       <div><dt>Role</dt><dd>Head Researcher</dd></div>
@@ -26,13 +26,211 @@
       <p>Existing dark-pattern taxonomies were fragmented and too academic to guide practical product decisions in mobile games.</p>
 
       <h2 id="approach">Approach</h2>
-      <p>I synthesized three established taxonomies into a single, industry-oriented framework. I designed the research protocol and recruited 30 participants who met defined screening criteria.</p>
+      <p>I synthesized three established taxonomies into a single, industry-oriented framework. I designed the research protocol and recruited 30 participants who met defined screening criteria. The framework works in three steps:</p>
+
+      <figure class="wide diagram">
+        <svg class="dg dg-wide" viewBox="0 0 960 400" role="img" aria-label="The framework in three steps. Evidence from 30 player interviews and Google Play reviews feeds step 1, Identify, which labels each exit point by category and strategy. Step 2, Weigh, rates each pattern 1 to 5 on churn risk, resources required and profit impact to produce a priority list. Step 3, Execute, fixes the highest-priority patterns and tells players what changed through patch notes, roadmaps and in-game mail.">
+          <defs>
+            <marker id="fa-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head" d="M0,0 L10,5 L0,10 z"/></marker>
+          </defs>
+          <text x="24" y="40" class="t-small t-muted">EVIDENCE</text>
+          <rect class="box" x="24" y="56" width="180" height="116" rx="10"/>
+          <text x="40" y="86" class="t-title">Player interviews</text>
+          <text x="40" y="112" class="t-muted">30 participants</text>
+          <text x="40" y="134" class="t-muted">954 qualitative codes</text>
+          <text x="40" y="156" class="t-muted">why they quit</text>
+          <rect class="box" x="24" y="192" width="180" height="98" rx="10"/>
+          <text x="40" y="222" class="t-title">App store reviews</text>
+          <text x="40" y="248" class="t-muted">Google Play</text>
+          <text x="40" y="270" class="t-muted">complaints per game</text>
+          <path class="line" d="M204,114 H228 M204,241 H228 M228,114 V241"/>
+          <line class="line" x1="228" y1="178" x2="250" y2="178" marker-end="url(#fa-arrow)"/>
+
+          <rect class="box-strong" x="252" y="40" width="196" height="276" rx="12"/>
+          <circle class="dot" cx="278" cy="70" r="14"/><text x="278" y="75" text-anchor="middle" class="t-on-accent">1</text>
+          <text x="302" y="76" class="t-title">Identify</text>
+          <text x="268" y="112" class="t-muted">Trace each exit point</text>
+          <text x="268" y="134" class="t-muted">to its design pattern</text>
+          <text x="268" y="166">Category</text>
+          <text x="268" y="188" class="t-muted">temporal, monetary, social</text>
+          <text x="268" y="220">Strategy</text>
+          <text x="268" y="242" class="t-muted">nagging, obstruction,</text>
+          <text x="268" y="264" class="t-muted">sneaking, forced action</text>
+          <text x="268" y="300" class="t-accent">Labeled patterns</text>
+
+          <line class="line" x1="448" y1="178" x2="498" y2="178" marker-end="url(#fa-arrow)"/>
+
+          <rect class="box-strong" x="500" y="40" width="196" height="276" rx="12"/>
+          <circle class="dot" cx="526" cy="70" r="14"/><text x="526" y="75" text-anchor="middle" class="t-on-accent">2</text>
+          <text x="550" y="76" class="t-title">Weigh</text>
+          <text x="516" y="112" class="t-muted">Rate each pattern 1 to 5</text>
+          <text x="516" y="146">Churn risk</text>
+          <text x="516" y="170">Resources required</text>
+          <text x="516" y="194">Profit impact</text>
+          <text x="516" y="230" class="t-muted">Raters score separately,</text>
+          <text x="516" y="252" class="t-muted">then average</text>
+          <text x="516" y="300" class="t-accent">Priority list</text>
+
+          <line class="line" x1="696" y1="178" x2="746" y2="178" marker-end="url(#fa-arrow)"/>
+
+          <rect class="box-strong" x="748" y="40" width="196" height="276" rx="12"/>
+          <circle class="dot" cx="774" cy="70" r="14"/><text x="774" y="75" text-anchor="middle" class="t-on-accent">3</text>
+          <text x="798" y="76" class="t-title">Execute</text>
+          <text x="764" y="112" class="t-muted">Fix the top-ranked</text>
+          <text x="764" y="134" class="t-muted">patterns first</text>
+          <text x="764" y="170" class="t-muted">Publish a roadmap</text>
+          <text x="764" y="206" class="t-muted">Keep players informed</text>
+          <text x="764" y="228" class="t-muted">as changes ship</text>
+          <text x="764" y="300" class="t-accent">Shipped fixes</text>
+
+          <path class="line-dash" d="M846,316 V362 H114 V292" marker-end="url(#fa-arrow)"/>
+          <text x="480" y="384" text-anchor="middle" class="t-small t-muted">Patch notes, roadmaps and in-game mail keep players in the loop</text>
+        </svg>
+        <svg class="dg dg-tall" viewBox="0 0 360 700" role="img" aria-label="The framework in three steps. Evidence from 30 player interviews and Google Play reviews feeds step 1, Identify, which labels each exit point by category and strategy. Step 2, Weigh, rates each pattern 1 to 5 on churn risk, resources required and profit impact to produce a priority list. Step 3, Execute, fixes the highest-priority patterns and tells players what changed through patch notes, roadmaps and in-game mail.">
+          <defs>
+            <marker id="fa-arrow-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head" d="M0,0 L10,5 L0,10 z"/></marker>
+          </defs>
+          <text x="8" y="18" class="t-small t-muted">EVIDENCE</text>
+          <rect class="box" x="8" y="30" width="166" height="96" rx="10"/>
+          <text x="22" y="56" class="t-title">Interviews</text>
+          <text x="22" y="82" class="t-muted">30 participants</text>
+          <text x="22" y="104" class="t-muted">954 codes</text>
+          <rect class="box" x="186" y="30" width="166" height="96" rx="10"/>
+          <text x="200" y="56" class="t-title">App reviews</text>
+          <text x="200" y="82" class="t-muted">Google Play</text>
+          <text x="200" y="104" class="t-muted">complaints</text>
+          <path class="line" d="M91,126 V138 H269 V126"/>
+          <line class="line" x1="180" y1="138" x2="180" y2="150" marker-end="url(#fa-arrow-t)"/>
+
+          <rect class="box-strong" x="8" y="152" width="344" height="168" rx="12"/>
+          <circle class="dot" cx="34" cy="178" r="14"/><text x="34" y="183" text-anchor="middle" class="t-on-accent">1</text>
+          <text x="58" y="184" class="t-title">Identify</text>
+          <text x="24" y="214" class="t-muted">Trace each exit point to its pattern</text>
+          <text x="24" y="242">Category</text>
+          <text x="24" y="262" class="t-muted">temporal, monetary, social</text>
+          <text x="24" y="288">Strategy</text>
+          <text x="24" y="308" class="t-muted">nagging, obstruction, sneaking, forced action</text>
+
+          <line class="line" x1="180" y1="320" x2="180" y2="350" marker-end="url(#fa-arrow-t)"/>
+          <text x="192" y="340" class="t-small t-accent">labeled patterns</text>
+
+          <rect class="box-strong" x="8" y="352" width="344" height="128" rx="12"/>
+          <circle class="dot" cx="34" cy="378" r="14"/><text x="34" y="383" text-anchor="middle" class="t-on-accent">2</text>
+          <text x="58" y="384" class="t-title">Weigh</text>
+          <text x="24" y="414" class="t-muted">Rate each pattern 1 to 5 on</text>
+          <text x="24" y="436">churn risk, resources, profit</text>
+          <text x="24" y="464" class="t-muted">Raters score separately, then average</text>
+
+          <line class="line" x1="180" y1="480" x2="180" y2="510" marker-end="url(#fa-arrow-t)"/>
+          <text x="192" y="500" class="t-small t-accent">priority list</text>
+
+          <rect class="box-strong" x="8" y="512" width="344" height="128" rx="12"/>
+          <circle class="dot" cx="34" cy="538" r="14"/><text x="34" y="543" text-anchor="middle" class="t-on-accent">3</text>
+          <text x="58" y="544" class="t-title">Execute</text>
+          <text x="24" y="574" class="t-muted">Fix the top-ranked patterns first</text>
+          <text x="24" y="598" class="t-muted">Publish a roadmap</text>
+          <text x="24" y="622" class="t-muted">Keep players informed as changes ship</text>
+
+          <line class="line-dash" x1="180" y1="640" x2="180" y2="666"/>
+          <text x="180" y="688" text-anchor="middle" class="t-small t-muted">Patch notes, roadmaps and in-game mail</text>
+        </svg>
+        <figcaption>The framework turns player evidence into a ranked list of fixes, then closes the loop by telling players what changed.</figcaption>
+      </figure>
 
       <h2 id="evidence">Evidence</h2>
       <p>I analyzed 30+ semi-structured interviews through reflexive thematic analysis, generating 954 qualitative codes. I facilitated cross-team affinity mapping in Miro and resolved coding disagreements so the themes held up.</p>
 
+      <h2 id="example">Worked example: Hole.io</h2>
+      <p>The thesis applies the framework to three mobile games. In Hole.io, the way players were made to watch ads was one of the most cited reasons for quitting. Here is that exit point traced through all three steps.</p>
+
+      <figure class="wide diagram">
+        <svg class="dg dg-wide" viewBox="0 0 960 300" role="img" aria-label="One exit point through the framework. A Hole.io player review says ads pop up after almost every match and even interrupt mid-gameplay. Identify labels the exit point, unskippable and unavoidable ads, as Monetary plus Forced action. Weigh rates churn risk 5 out of 5, ease of fix 4 and profit outlook 2. Execute cuts ad frequency, makes ads optional in exchange for rewards and tells players what changed.">
+          <defs>
+            <marker id="fc-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head" d="M0,0 L10,5 L0,10 z"/></marker>
+          </defs>
+          <rect class="box" x="16" y="30" width="208" height="240" rx="12"/>
+          <text x="34" y="62" class="t-small t-muted">PLAYER EVIDENCE</text>
+          <text x="34" y="92" class="t-title">Hole.io review</text>
+          <text x="34" y="128" class="t-muted">"Ads pop up after</text>
+          <text x="34" y="150" class="t-muted">almost every match</text>
+          <text x="34" y="172" class="t-muted">and even interrupt</text>
+          <text x="34" y="194" class="t-muted">mid-gameplay"</text>
+          <line class="line" x1="224" y1="150" x2="254" y2="150" marker-end="url(#fc-arrow)"/>
+
+          <rect class="box-strong" x="256" y="30" width="208" height="240" rx="12"/>
+          <circle class="dot" cx="280" cy="58" r="12"/><text x="280" y="63" text-anchor="middle" class="t-on-accent t-small">1</text>
+          <text x="300" y="63" class="t-title">Identify</text>
+          <text x="274" y="102" class="t-muted">Exit point</text>
+          <text x="274" y="124">Unskippable,</text>
+          <text x="274" y="146">unavoidable ads</text>
+          <rect class="tint" x="274" y="172" width="96" height="30" rx="8"/><text x="322" y="192" text-anchor="middle" class="t-small">Monetary</text>
+          <rect class="tint" x="274" y="210" width="118" height="30" rx="8"/><text x="333" y="230" text-anchor="middle" class="t-small">Forced action</text>
+          <line class="line" x1="464" y1="150" x2="494" y2="150" marker-end="url(#fc-arrow)"/>
+
+          <rect class="box-strong" x="496" y="30" width="208" height="240" rx="12"/>
+          <circle class="dot" cx="520" cy="58" r="12"/><text x="520" y="63" text-anchor="middle" class="t-on-accent t-small">2</text>
+          <text x="540" y="63" class="t-title">Weigh</text>
+          <text x="514" y="104">Churn risk</text>
+          <g><rect class="seg-on" x="514" y="114" width="30" height="10" rx="3"/><rect class="seg-on" x="548" y="114" width="30" height="10" rx="3"/><rect class="seg-on" x="582" y="114" width="30" height="10" rx="3"/><rect class="seg-on" x="616" y="114" width="30" height="10" rx="3"/><rect class="seg-on" x="650" y="114" width="30" height="10" rx="3"/></g>
+          <text x="514" y="160">Ease of fix</text>
+          <g><rect class="seg-on" x="514" y="170" width="30" height="10" rx="3"/><rect class="seg-on" x="548" y="170" width="30" height="10" rx="3"/><rect class="seg-on" x="582" y="170" width="30" height="10" rx="3"/><rect class="seg-on" x="616" y="170" width="30" height="10" rx="3"/><rect class="seg-off" x="650" y="170" width="30" height="10" rx="3"/></g>
+          <text x="514" y="216">Profit outlook</text>
+          <g><rect class="seg-on" x="514" y="226" width="30" height="10" rx="3"/><rect class="seg-on" x="548" y="226" width="30" height="10" rx="3"/><rect class="seg-off" x="582" y="226" width="30" height="10" rx="3"/><rect class="seg-off" x="616" y="226" width="30" height="10" rx="3"/><rect class="seg-off" x="650" y="226" width="30" height="10" rx="3"/></g>
+          <text x="686" y="104" text-anchor="end" class="t-small t-muted">5</text><text x="686" y="160" text-anchor="end" class="t-small t-muted">4</text><text x="686" y="216" text-anchor="end" class="t-small t-muted">2</text>
+          <line class="line" x1="704" y1="150" x2="734" y2="150" marker-end="url(#fc-arrow)"/>
+
+          <rect class="box-accent" x="736" y="30" width="208" height="240" rx="12"/>
+          <circle class="dot" cx="760" cy="58" r="12"/><text x="760" y="63" text-anchor="middle" class="t-on-accent t-small">3</text>
+          <text x="780" y="63" class="t-title">Execute</text>
+          <text x="754" y="104">Cut ad frequency</text>
+          <text x="754" y="140">Make ads optional,</text>
+          <text x="754" y="162">for rewards</text>
+          <text x="754" y="198">Tell players</text>
+          <text x="754" y="220">what changed</text>
+        </svg>
+        <svg class="dg dg-tall" viewBox="0 0 360 588" role="img" aria-label="One exit point through the framework. A Hole.io player review says ads pop up after almost every match and even interrupt mid-gameplay. Identify labels the exit point, unskippable and unavoidable ads, as Monetary plus Forced action. Weigh rates churn risk 5 out of 5, ease of fix 4 and profit outlook 2. Execute cuts ad frequency, makes ads optional in exchange for rewards and tells players what changed.">
+          <defs>
+            <marker id="fc-arrow-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head" d="M0,0 L10,5 L0,10 z"/></marker>
+          </defs>
+          <rect class="box" x="8" y="8" width="344" height="112" rx="12"/>
+          <text x="24" y="32" class="t-small t-muted">PLAYER EVIDENCE</text>
+          <text x="24" y="56" class="t-title">Hole.io review</text>
+          <text x="24" y="82" class="t-muted">"Ads pop up after almost every match</text>
+          <text x="24" y="104" class="t-muted">and even interrupt mid-gameplay"</text>
+          <line class="line" x1="180" y1="120" x2="180" y2="146" marker-end="url(#fc-arrow-t)"/>
+
+          <rect class="box-strong" x="8" y="148" width="344" height="112" rx="12"/>
+          <circle class="dot" cx="32" cy="174" r="12"/><text x="32" y="179" text-anchor="middle" class="t-on-accent t-small">1</text>
+          <text x="52" y="179" class="t-title">Identify</text>
+          <text x="24" y="206">Unskippable, unavoidable ads</text>
+          <rect class="tint" x="24" y="220" width="96" height="28" rx="8"/><text x="72" y="239" text-anchor="middle" class="t-small">Monetary</text>
+          <rect class="tint" x="128" y="220" width="118" height="28" rx="8"/><text x="187" y="239" text-anchor="middle" class="t-small">Forced action</text>
+          <line class="line" x1="180" y1="260" x2="180" y2="286" marker-end="url(#fc-arrow-t)"/>
+
+          <rect class="box-strong" x="8" y="288" width="344" height="140" rx="12"/>
+          <circle class="dot" cx="32" cy="314" r="12"/><text x="32" y="319" text-anchor="middle" class="t-on-accent t-small">2</text>
+          <text x="52" y="319" class="t-title">Weigh</text>
+          <text x="24" y="350">Churn risk</text>
+          <g><rect class="seg-on" x="140" y="341" width="30" height="10" rx="3"/><rect class="seg-on" x="174" y="341" width="30" height="10" rx="3"/><rect class="seg-on" x="208" y="341" width="30" height="10" rx="3"/><rect class="seg-on" x="242" y="341" width="30" height="10" rx="3"/><rect class="seg-on" x="276" y="341" width="30" height="10" rx="3"/></g>
+          <text x="24" y="378">Ease of fix</text>
+          <g><rect class="seg-on" x="140" y="369" width="30" height="10" rx="3"/><rect class="seg-on" x="174" y="369" width="30" height="10" rx="3"/><rect class="seg-on" x="208" y="369" width="30" height="10" rx="3"/><rect class="seg-on" x="242" y="369" width="30" height="10" rx="3"/><rect class="seg-off" x="276" y="369" width="30" height="10" rx="3"/></g>
+          <text x="24" y="406">Profit outlook</text>
+          <g><rect class="seg-on" x="140" y="397" width="30" height="10" rx="3"/><rect class="seg-on" x="174" y="397" width="30" height="10" rx="3"/><rect class="seg-off" x="208" y="397" width="30" height="10" rx="3"/><rect class="seg-off" x="242" y="397" width="30" height="10" rx="3"/><rect class="seg-off" x="276" y="397" width="30" height="10" rx="3"/></g>
+          <text x="334" y="350" text-anchor="end" class="t-small t-muted">5</text><text x="334" y="378" text-anchor="end" class="t-small t-muted">4</text><text x="334" y="406" text-anchor="end" class="t-small t-muted">2</text>
+          <line class="line" x1="180" y1="428" x2="180" y2="454" marker-end="url(#fc-arrow-t)"/>
+
+          <rect class="box-accent" x="8" y="456" width="344" height="124" rx="12"/>
+          <circle class="dot" cx="32" cy="482" r="12"/><text x="32" y="487" text-anchor="middle" class="t-on-accent t-small">3</text>
+          <text x="52" y="487" class="t-title">Execute</text>
+          <text x="24" y="516">Cut ad frequency</text>
+          <text x="24" y="540">Make ads optional, for rewards</text>
+          <text x="24" y="564">Tell players what changed</text>
+        </svg>
+        <figcaption>A churn risk of 5 marks the pattern most likely to drive players away, and it is cheap to fix. Fewer forced ads lowers ad revenue (profit outlook 2), but the thesis predicts longer play sessions could offset the loss.</figcaption>
+      </figure>
+
       <h2 id="outcome">Outcome</h2>
-      <p>A validated framework, plus resource-conscious design recommendations that balance user trust, retention and monetization. The aim is practical: improve the player experience while keeping viable revenue models.</p>
+      <p>A practical framework, plus resource-conscious design recommendations that balance user trust, retention and monetization. The aim is to improve the player experience while keeping viable revenue models. The framework has not yet been tested inside a game studio; validating it in industry is the next step.</p>
 
       <h2 id="methods">Methods</h2>
       <ul class="tags" aria-label="Methods">

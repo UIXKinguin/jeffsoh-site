@@ -1,4 +1,4 @@
-<!-- {"title": "Twitter Bot Classification", "description": "A reproducible Python workflow that separates likely-bot from likely-human sentiment in political tweets, using Botometer, VADER, TextBlob, SciPy and LDA topic modeling. Research by Jeffrey Oh.", "path": "/side-projects/twitter-bot-classification/", "nav": "projects"} -->
+<!-- {"title": "Twitter Bot Classification", "description": "A mixed-methods study comparing likely-bot and likely-human sentiment in political tweets, using Botometer, VADER, TextBlob, t-tests and inductive coding. Research by Jeffrey Oh.", "path": "/side-projects/twitter-bot-classification/", "nav": "projects"} -->
 <div class="container">
   <header class="page-head">
     <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -19,24 +19,171 @@
       <p>Organizations that use social sentiment data need to distinguish genuine public reaction from activity associated with likely-bot accounts.</p>
 
       <h2 id="approach">Approach</h2>
-      <p>I built an end-to-end Python workflow on 350+ political tweets:</p>
+      <p>I built an end-to-end Python workflow that pairs sentiment statistics with qualitative coding:</p>
       <ol>
-        <li><strong>Scrape:</strong> collect the political tweets and their accounts.</li>
-        <li><strong>Classify:</strong> Botometer bot-likelihood scoring for each account.</li>
-        <li><strong>Score:</strong> sentiment with both VADER and TextBlob, so the two models can be compared.</li>
-        <li><strong>Validate:</strong> SciPy t-tests on sentiment differences between likely-bot and likely-human accounts.</li>
-        <li><strong>Visualize:</strong> chart the results, with Gensim LDA topic modeling.</li>
+        <li><strong>Scrape:</strong> about 440 tweets tagged #Trump or #Kamala, January to November 2024, collected with PhantomBuster because the free Twitter API was no longer available.</li>
+        <li><strong>Clean:</strong> keep English, on-topic tweets, which left about 300.</li>
+        <li><strong>Classify:</strong> Botometer bot-likelihood scoring for each account, split into three tiers: likely human, ambiguous and likely bot.</li>
+        <li><strong>Score:</strong> sentiment with both VADER and TextBlob.</li>
+        <li><strong>Test:</strong> t-tests on sentiment between the three tiers, for each candidate.</li>
+        <li><strong>Code:</strong> inductive coding of tweet content into 11 themes, compared across tiers.</li>
       </ol>
 
+      <figure class="wide diagram">
+        <svg class="dg dg-wide" viewBox="0 0 960 360" role="img" aria-label="Mixed-methods design. About 300 tweets in three bot-likelihood tiers feed two tracks. The quantitative track scores sentiment with VADER and TextBlob, then runs t-tests: no tier differed significantly, all p above 0.4. The qualitative track codes tweets into 11 themes: disapproval of Trump came mostly from likely humans, and partisan support was absent from bot-leaning accounts. Together: bot sentiment blends in with human sentiment. Next step: a larger, cleaner dataset.">
+          <defs>
+            <marker id="tb-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head" d="M0,0 L10,5 L0,10 z"/></marker>
+          </defs>
+          <rect class="box-strong" x="16" y="132" width="168" height="96" rx="12"/>
+          <text x="32" y="168" class="t-big">~300 tweets</text>
+          <text x="32" y="196" class="t-muted">in 3 bot-likelihood</text>
+          <text x="32" y="216" class="t-muted">tiers (Botometer)</text>
+
+          <path class="line" d="M184,180 H200 M200,92 V268 M200,92 H222 M200,268 H222"/>
+          <polygon class="head" points="222,87 230,92 222,97"/><polygon class="head" points="222,263 230,268 222,273"/>
+
+          <text x="232" y="36" class="t-small t-muted">QUANTITATIVE</text>
+          <rect class="box" x="232" y="50" width="196" height="84" rx="12"/>
+          <text x="248" y="84" class="t-title">Sentiment scores</text>
+          <text x="248" y="110" class="t-muted">VADER and TextBlob</text>
+          <line class="line" x1="428" y1="92" x2="454" y2="92" marker-end="url(#tb-arrow)"/>
+          <rect class="box" x="456" y="50" width="196" height="84" rx="12"/>
+          <text x="472" y="84" class="t-title">t-tests</text>
+          <text x="472" y="110" class="t-muted">no tier differed (p &gt; 0.4)</text>
+
+          <text x="232" y="212" class="t-small t-muted">QUALITATIVE</text>
+          <rect class="box" x="232" y="226" width="196" height="84" rx="12"/>
+          <text x="248" y="260" class="t-title">Inductive coding</text>
+          <text x="248" y="286" class="t-muted">11 themes</text>
+          <line class="line" x1="428" y1="268" x2="454" y2="268" marker-end="url(#tb-arrow)"/>
+          <rect class="box" x="456" y="226" width="196" height="84" rx="12"/>
+          <text x="472" y="249" class="t-small t-muted">Disapproval of Trump:</text>
+          <text x="472" y="266" class="t-small t-muted">mostly likely humans</text>
+          <text x="472" y="283" class="t-small t-muted">Partisan support: none</text>
+          <text x="472" y="300" class="t-small t-muted">from bot-leaning accounts</text>
+
+          <path class="line" d="M652,92 H676 M652,268 H676 M676,92 V268"/>
+          <line class="line" x1="676" y1="180" x2="702" y2="180" marker-end="url(#tb-arrow)"/>
+          <rect class="box-accent" x="704" y="110" width="240" height="140" rx="12"/>
+          <text x="722" y="146" class="t-small t-accent">FINDING</text>
+          <text x="722" y="176" class="t-title">Bot sentiment blends</text>
+          <text x="722" y="198" class="t-title">in with human sentiment</text>
+          <text x="722" y="228" class="t-muted">Next: a larger, cleaner dataset</text>
+        </svg>
+        <svg class="dg dg-tall" viewBox="0 0 360 510" role="img" aria-label="Mixed-methods design. About 300 tweets in three bot-likelihood tiers feed two tracks. The quantitative track scores sentiment with VADER and TextBlob, then runs t-tests: no tier differed significantly, all p above 0.4. The qualitative track codes tweets into 11 themes: disapproval of Trump came mostly from likely humans, and partisan support was absent from bot-leaning accounts. Together: bot sentiment blends in with human sentiment. Next step: a larger, cleaner dataset.">
+          <defs>
+            <marker id="tb-arrow-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="head" d="M0,0 L10,5 L0,10 z"/></marker>
+          </defs>
+          <rect class="box-strong" x="8" y="8" width="344" height="76" rx="12"/>
+          <text x="24" y="42" class="t-big">~300 tweets</text>
+          <text x="24" y="68" class="t-muted">in 3 bot-likelihood tiers (Botometer)</text>
+          <path class="line" d="M180,84 V100 M91,100 H269"/>
+          <line class="line" x1="91" y1="100" x2="91" y2="140" marker-end="url(#tb-arrow-t)"/>
+          <line class="line" x1="269" y1="100" x2="269" y2="140" marker-end="url(#tb-arrow-t)"/>
+
+          <rect class="box" x="8" y="142" width="166" height="84" rx="12"/>
+          <text x="22" y="164" class="t-small t-muted">QUANTITATIVE</text>
+          <text x="22" y="190" class="t-title">Sentiment</text>
+          <text x="22" y="212" class="t-muted">VADER, TextBlob</text>
+          <rect class="box" x="186" y="142" width="166" height="84" rx="12"/>
+          <text x="200" y="164" class="t-small t-muted">QUALITATIVE</text>
+          <text x="200" y="190" class="t-title">Coding</text>
+          <text x="200" y="212" class="t-muted">inductive, 11 themes</text>
+          <line class="line" x1="91" y1="226" x2="91" y2="250" marker-end="url(#tb-arrow-t)"/>
+          <line class="line" x1="269" y1="226" x2="269" y2="250" marker-end="url(#tb-arrow-t)"/>
+
+          <rect class="box" x="8" y="252" width="166" height="100" rx="12"/>
+          <text x="22" y="280" class="t-title">t-tests</text>
+          <text x="22" y="306" class="t-muted">no tier differed</text>
+          <text x="22" y="326" class="t-muted">(all p &gt; 0.4)</text>
+          <rect class="box" x="186" y="252" width="166" height="100" rx="12"/>
+          <text x="200" y="276" class="t-small t-muted">Disapproval of Trump:</text>
+          <text x="200" y="294" class="t-small t-muted">mostly likely humans</text>
+          <text x="200" y="316" class="t-small t-muted">Partisan support:</text>
+          <text x="200" y="334" class="t-small t-muted">none from bot-leaning</text>
+
+          <path class="line" d="M91,352 V368 H269 V352"/>
+          <line class="line" x1="180" y1="368" x2="180" y2="392" marker-end="url(#tb-arrow-t)"/>
+
+          <rect class="box-accent" x="8" y="394" width="344" height="108" rx="12"/>
+          <text x="24" y="418" class="t-small t-accent">FINDING</text>
+          <text x="24" y="444" class="t-title">Bot sentiment blends in</text>
+          <text x="24" y="466" class="t-title">with human sentiment</text>
+          <text x="24" y="490" class="t-muted">Next: a larger, cleaner dataset</text>
+        </svg>
+        <figcaption>Statistics alone found no difference; the coding showed where bots and humans still diverged.</figcaption>
+      </figure>
+
       <h2 id="result">Result</h2>
-      <p>A reproducible scrape, classify, score, validate and visualize workflow. Comparing two sentiment models strengthened confidence in the results, and the analysis surfaced an honest limit: the highest bot-likelihood tier had too few accounts for strong conclusions.</p>
+      <p>Sentiment from likely-bot accounts was statistically indistinguishable from likely-human sentiment: no t-test between tiers was significant (all p &gt; 0.4). Every tier's spread overlaps the others.</p>
+
+      <figure class="wide diagram">
+        <svg class="dg dg-wide" viewBox="0 0 720 330" role="img" aria-label="Mean sentiment by bot-likelihood tier, with one standard deviation bars, on a scale from minus 1 to 1. Tweets about Kamala Harris: likely human 0.06, ambiguous 0.10, likely bot 0.29; t-test p-values 0.51 to 0.73. Tweets about Donald Trump: likely human minus 0.02, ambiguous 0.02, likely bot 0.17; p-values 0.41 to 0.66. The bars overlap heavily.">
+          <path class="line-dash" d="M440,40 V262"/>
+          <g class="grid"><line x1="200" y1="262" x2="680" y2="262"/></g>
+
+          <text x="16" y="40" class="t-title">Tweets about Kamala Harris</text>
+          <text x="704" y="40" text-anchor="end" class="t-small t-muted">t-tests p = 0.51 to 0.73</text>
+          <text x="186" y="70" text-anchor="end" class="t-muted">Likely human</text>
+          <line class="line-strong" x1="350" y1="66" x2="560" y2="66"/><circle class="dot" cx="455" cy="66" r="6"/>
+          <text x="186" y="96" text-anchor="end" class="t-muted">Ambiguous</text>
+          <line class="line-strong" x1="333" y1="92" x2="596" y2="92"/><circle class="dot" cx="465" cy="92" r="6"/>
+          <text x="186" y="122" text-anchor="end" class="t-muted">Likely bot</text>
+          <line class="line-strong" x1="429" y1="118" x2="590" y2="118"/><circle class="dot" cx="509" cy="118" r="6"/>
+
+          <text x="16" y="164" class="t-title">Tweets about Donald Trump</text>
+          <text x="704" y="164" text-anchor="end" class="t-small t-muted">t-tests p = 0.41 to 0.66</text>
+          <text x="186" y="194" text-anchor="end" class="t-muted">Likely human</text>
+          <line class="line-strong" x1="306" y1="190" x2="564" y2="190"/><circle class="dot" cx="435" cy="190" r="6"/>
+          <text x="186" y="220" text-anchor="end" class="t-muted">Ambiguous</text>
+          <line class="line-strong" x1="345" y1="216" x2="546" y2="216"/><circle class="dot" cx="445" cy="216" r="6"/>
+          <text x="186" y="246" text-anchor="end" class="t-muted">Likely bot</text>
+          <line class="line-strong" x1="338" y1="242" x2="624" y2="242"/><circle class="dot" cx="481" cy="242" r="6"/>
+
+          <g class="t-small t-muted">
+            <text x="200" y="282" text-anchor="middle">-1</text><text x="320" y="282" text-anchor="middle">-0.5</text><text x="440" y="282" text-anchor="middle">0</text><text x="560" y="282" text-anchor="middle">0.5</text><text x="680" y="282" text-anchor="middle">1</text>
+          </g>
+          <text x="440" y="312" text-anchor="middle">Mean sentiment score (dot) and 1 standard deviation (bar)</text>
+        </svg>
+        <svg class="dg dg-tall" viewBox="0 0 360 336" role="img" aria-label="Mean sentiment by bot-likelihood tier, with one standard deviation bars, on a scale from minus 1 to 1. Tweets about Kamala Harris: likely human 0.06, ambiguous 0.10, likely bot 0.29; t-test p-values 0.51 to 0.73. Tweets about Donald Trump: likely human minus 0.02, ambiguous 0.02, likely bot 0.17; p-values 0.41 to 0.66. The bars overlap heavily.">
+          <path class="line-dash" d="M230,56 V280"/>
+          <g class="grid"><line x1="110" y1="280" x2="350" y2="280"/></g>
+
+          <text x="8" y="22" class="t-title">Tweets about Kamala Harris</text>
+          <text x="8" y="42" class="t-small t-muted">t-tests p = 0.51 to 0.73</text>
+          <text x="100" y="76" text-anchor="end" class="t-muted">Likely human</text>
+          <line class="line-strong" x1="185.1" y1="72" x2="289.9" y2="72"/><circle class="dot" cx="237.5" cy="72" r="5"/>
+          <text x="100" y="102" text-anchor="end" class="t-muted">Ambiguous</text>
+          <line class="line-strong" x1="176.6" y1="98" x2="307.9" y2="98"/><circle class="dot" cx="242.3" cy="98" r="5"/>
+          <text x="100" y="128" text-anchor="end" class="t-muted">Likely bot</text>
+          <line class="line-strong" x1="224.4" y1="124" x2="305" y2="124"/><circle class="dot" cx="264.7" cy="124" r="5"/>
+
+          <text x="8" y="164" class="t-title">Tweets about Donald Trump</text>
+          <text x="8" y="184" class="t-small t-muted">t-tests p = 0.41 to 0.66</text>
+          <text x="100" y="218" text-anchor="end" class="t-muted">Likely human</text>
+          <line class="line-strong" x1="165" y1="214" x2="294.2" y2="214"/><circle class="dot" cx="227.6" cy="214" r="5"/>
+          <text x="100" y="244" text-anchor="end" class="t-muted">Ambiguous</text>
+          <line class="line-strong" x1="182.4" y1="240" x2="283" y2="240"/><circle class="dot" cx="232.7" cy="240" r="5"/>
+          <text x="100" y="270" text-anchor="end" class="t-muted">Likely bot</text>
+          <line class="line-strong" x1="179" y1="266" x2="321.9" y2="266"/><circle class="dot" cx="250.4" cy="266" r="5"/>
+
+          <g class="t-small t-muted">
+            <text x="110" y="298" text-anchor="middle">-1</text><text x="170" y="298" text-anchor="middle">-0.5</text><text x="230" y="298" text-anchor="middle">0</text><text x="290" y="298" text-anchor="middle">0.5</text><text x="346" y="298" text-anchor="middle">1</text>
+          </g>
+          <text x="180" y="326" text-anchor="middle" class="t-small">Mean sentiment (dot), 1 standard deviation (bar)</text>
+        </svg>
+        <figcaption>The spreads overlap so much that none of the differences between tiers were statistically significant.</figcaption>
+      </figure>
+
+      <p>The qualitative coding showed where the groups still differed. Most tweets disapproving of Trump came from likely-human accounts, and partisan support disappeared among bot-leaning accounts, though that may be a sample-size effect.</p>
+      <p>The main limitation is the dataset. Scraping limits meant about 440 tweets shrank to about 300 after cleaning, which reduces statistical power. The next step is to repeat the method on a larger, better-cleaned dataset.</p>
 
       <h2 id="transfer">Where else it applies</h2>
       <p>The workflow generalizes to brand-sentiment monitoring, review-authenticity analysis and public-opinion research.</p>
 
       <h2 id="tools">Tools</h2>
       <ul class="tags" aria-label="Tools">
-        <li>Python</li><li>Botometer</li><li>VADER</li><li>TextBlob</li><li>SciPy</li><li>Gensim LDA</li>
+        <li>Python</li><li>PhantomBuster</li><li>Botometer</li><li>VADER</li><li>TextBlob</li><li>SciPy</li><li>Inductive coding</li>
       </ul>
     </article>
   </div>

@@ -126,6 +126,12 @@ The stylesheet is organized into numbered sections; see the contents comment at 
   `.wide` figures, galleries and cards may use `--wide`.
 - **Sticky contents.** Long case studies get a `position: sticky` sidebar on desktop and an
   inline list on phones.
+- **Inline SVG diagrams.** The two research pages draw their diagrams as hand-written SVG
+  in the HTML, with no images or libraries. Shapes and text use `.dg` classes that point at
+  the color tokens, so the diagrams follow dark mode. Each figure holds a wide version
+  (`.dg-wide`) and a stacked phone version (`.dg-tall`); a media query shows one, and
+  `display: none` keeps the hidden one away from screen readers. Each SVG has
+  `role="img"` and an `aria-label` that describes it in words.
 - **Readable class names.** `.card`, `.gallery`, `.toc`, `.timeline` describe what a thing
   is, so the HTML reads like a document.
 

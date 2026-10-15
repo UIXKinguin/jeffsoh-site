@@ -304,6 +304,38 @@ figcaption { color: var(--muted); font-size: var(--step--1); margin-top: 0.75rem
 .wide { width: 100%; }
 .prose > figure.narrow { max-width: 22rem; }
 
+/* Diagrams: hand-drawn inline SVG. Each figure holds a wide version and a
+   stacked phone version; only one shows at a time, and display:none also hides
+   the other from screen readers. Classes map shapes and text to the color
+   tokens, so diagrams follow dark mode with no extra code. */
+.diagram { padding: clamp(1rem, 3vw, 1.5rem); border: 1px solid var(--border); border-radius: var(--radius); }
+.diagram figcaption { margin-top: 1rem; }
+.dg { display: block; width: 100%; height: auto; color: var(--text); font-family: var(--font); }
+.dg-tall { display: none; max-width: 26rem; margin-inline: auto; }
+@media (max-width: 55.99rem) {
+  .dg-wide { display: none; }
+  .dg-tall { display: block; }
+}
+.dg text { fill: currentColor; font-size: 13px; }
+.dg .t-title { font-size: 15px; font-weight: 650; }
+.dg .t-big { font-size: 22px; font-weight: 650; letter-spacing: -0.02em; }
+.dg .t-small { font-size: 11.5px; }
+.dg .t-muted { fill: var(--muted); }
+.dg .t-accent { fill: var(--accent); font-weight: 600; }
+.dg .t-on-accent { fill: var(--on-accent); font-weight: 650; }
+.dg .box { fill: var(--bg); stroke: var(--border); stroke-width: 1.5; }
+.dg .box-strong { fill: var(--bg); stroke: var(--text); stroke-width: 1.5; }
+.dg .box-accent { fill: var(--bg); stroke: var(--accent); stroke-width: 2; }
+.dg .tint { fill: var(--surface); }
+.dg .dot { fill: var(--accent); }
+.dg .seg-on { fill: var(--accent); }
+.dg .seg-off { fill: var(--border); }
+.dg .line { stroke: var(--muted); stroke-width: 1.5; fill: none; }
+.dg .line-strong { stroke: var(--text); stroke-width: 1.5; fill: none; }
+.dg .line-dash { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 4 4; fill: none; }
+.dg .grid { stroke: var(--border); stroke-width: 1; }
+.dg .head { fill: var(--muted); }
+
 .gallery { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr)); margin-block: 2rem; }
 .gallery.two { grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr)); }
 .gallery figure { margin: 0; }

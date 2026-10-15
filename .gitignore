@@ -11,3 +11,5 @@ Thumbs.db
 _source/site.json
 _source/fonts.css
 .claude/
+# Local review pages, never published
+_drafts/
