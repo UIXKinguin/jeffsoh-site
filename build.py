@@ -20,8 +20,12 @@ SRC = os.path.join(ROOT, "src")
 SITE_URL = "https://www.jeffsoh.com"
 EMAIL = "jeffrey.oh.hci@gmail.com"
 
-NAV = [("work", "Work", "/my-work/"), ("projects", "Projects", "/side-projects/"),
-       ("about", "About", "/about-me/"), ("contact", "Contact", "/contact/")]
+# (key, label, url). A page's "nav" setting names the key to mark as current.
+# Research comes first because it leads the resume; the URL stays /side-projects/
+# so existing links keep working.
+NAV = [("projects", "Research", "/side-projects/"), ("work", "Work", "/my-work/"),
+       ("about", "About", "/about-me/"), ("contact", "Contact", "/contact/"),
+       ("resume", 'Resume<span class="visually-hidden"> (PDF)</span>', "/assets/files/jeffrey-oh-resume.pdf")]
 
 # Old Squarespace URLs that should keep working.
 REDIRECTS = {
