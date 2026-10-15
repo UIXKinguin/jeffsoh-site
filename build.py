@@ -15,6 +15,8 @@ from datetime import date
 
 from PIL import Image
 
+from tools.og_card import make_card
+
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "src")
 SITE_URL = "https://www.jeffsoh.com"
@@ -73,7 +75,7 @@ def page(meta, body):
     full_title = "Jeffrey Oh" if title == "Jeffrey Oh" else f"{title} | Jeffrey Oh"
     desc = html.escape(meta.get("description", ""), quote=True)
     canonical = SITE_URL + meta["path"]
-    og_image = meta.get("image", "/assets/img/og-default.png")
+    og_image = meta["og_image"]
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -87,6 +89,10 @@ def page(meta, body):
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{canonical}">
 <meta property="og:image" content="{SITE_URL}{og_image}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{html.escape(title, quote=True)}, by Jeffrey Oh">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#111113" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -102,6 +108,20 @@ def page(meta, body):
 </body>
 </html>
 """
+
+
+def og_card(meta):
+    """Draw this page's link-preview card and return its public path."""
+    slug = meta["path"].strip("/").replace("/", "-").removesuffix(".html") or "home"
+    public = f"/assets/og/{slug}.jpg"
+    cover = meta.get("image")
+    cover_file = os.path.join(ROOT, cover.lstrip("/")) if cover else None
+    if meta["path"] == "/":
+        title, eyebrow = "Jeffrey Oh", "Mixed-methods UX researcher"
+    else:
+        title, eyebrow = meta["title"], "Jeffrey Oh, UX researcher"
+    make_card(os.path.join(ROOT, public.lstrip("/")), title, eyebrow, cover_file)
+    return public
 
 
 def size_images(doc):
@@ -197,6 +217,7 @@ def main():
             body = text[m.end():]
             if "—" in body or "–" in body:
                 raise ValueError(f"{fn}: contains an em or en dash")
+            meta["og_image"] = og_card(meta)
             doc = size_images(page(meta, smart_quotes(body)))
             write(meta["path"], doc if meta.get("absolute") else relativize(doc, meta["path"]))
             if meta.get("sitemap", True):

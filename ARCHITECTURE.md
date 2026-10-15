@@ -33,8 +33,11 @@ assets/
   css/style.css       the only stylesheet
   fonts/              Geist variable fonts (woff2)
   img/<page>/         WebP images, max 1600px wide
+  og/                 link-preview images, one per page (generated)
   files/              resume PDF
 build.py              the build script
+tools/og_card.py      draws link-preview images (called by build.py)
+tools/fonts/          Geist TTF used only to draw preview images
 <path>/index.html     built pages (generated; do not edit by hand)
 sitemap.xml, robots.txt, 404.html   generated
 CNAME, .nojekyll      GitHub Pages settings
@@ -57,8 +60,8 @@ generators such as Jekyll:
 | `title` | Page title. The site name is appended automatically |
 | `description` | Search and social-preview description |
 | `path` | Public URL. A path ending in `/` is written to `<path>/index.html` |
-| `nav` | Which header link is marked current: `work`, `projects`, `about`, `contact`, or `""` |
-| `image` | Optional social-preview image (defaults to `assets/img/og-default.png`) |
+| `nav` | Which header link is marked current: `projects` (labelled Research), `work`, `about`, `contact`, or `""` |
+| `image` | Optional cover image shown on the page's link-preview card |
 | `absolute` | Optional. Keep root-relative links (used by `404.html`, which can appear at any URL) |
 | `sitemap` | Optional. `false` leaves the page out of `sitemap.xml` |
 
@@ -70,16 +73,19 @@ generators such as Jekyll:
 2. **Lint.** Stop the build if the text contains an em or en dash (a copy rule from `DESIGN.md`).
 3. **`smart_quotes()`** turns straight quotes and apostrophes into curly ones, only in
    visible text, never inside tags or attributes.
-4. **`page()`** wraps the fragment in the layout: `<head>` (title, description, canonical
-   URL, Open Graph tags, theme color, favicon, font preload, stylesheet), then `header()`
+4. **`og_card()`** draws a 1200x630 JPEG link-preview card for the page
+   (`tools/og_card.py`): title, name and role, site address and, if the page sets
+   `image`, that image on the right. LinkedIn and Slack show it when the link is shared.
+5. **`page()`** wraps the fragment in the layout: `<head>` (title, description, canonical
+   URL, Open Graph and Twitter card tags, theme color, favicon, font preload, stylesheet), then `header()`
    with `aria-current="page"` on the active link, `<main id="main">`, and `footer()`.
-5. **`size_images()`** reads each image's real size with Pillow and adds `width`/`height`,
+6. **`size_images()`** reads each image's real size with Pillow and adds `width`/`height`,
    so the layout doesn't jump while images load. It adds `loading="lazy"` to every image,
    except images marked `data-eager` (heroes and covers), which get `fetchpriority="high"`.
    **It stops the build if any image has no `alt` attribute.**
-6. **`relativize()`** rewrites root-relative links (`/assets/...`) into relative ones
+7. **`relativize()`** rewrites root-relative links (`/assets/...`) into relative ones
    (`../assets/...`), so the same files work at `www.jeffsoh.com/` or under any sub-path.
-7. **`write()`** saves the page to `<path>/index.html`, which gives clean URLs like `/my-work/terra/`.
+8. **`write()`** saves the page to `<path>/index.html`, which gives clean URLs like `/my-work/terra/`.
 
 After the pages, the build writes:
 
