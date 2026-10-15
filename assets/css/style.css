@@ -1,5 +1,31 @@
-/* jeffsoh.com - one stylesheet. Tokens and rules are documented in DESIGN.md. */
+/* ==========================================================================
+   jeffsoh.com - the site's only stylesheet. No framework, no preprocessor.
+   Design rules live in DESIGN.md; how the site is built is in ARCHITECTURE.md.
 
+   Contents
+     1. Fonts            self-hosted Geist (variable weight)
+     2. Tokens           colors, type scale, radii, widths (CSS custom properties)
+     3. Dark mode        same tokens, new values, following the visitor's OS
+     4. Base             element defaults, focus ring, skip link
+     5. Header / footer  site chrome shared by every page
+     6. Shared pieces    sections, buttons, lede text
+     7. Components       hero, cards, row list, quote, contact band, page head
+     8. Case study       meta list, sticky contents, prose rhythm, figures, galleries
+     9. Tables, About    backtest table, about grid, timeline
+    10. Preferences      reduced motion, print
+
+   Patterns used throughout
+     - Tokens: change a value in :root and it updates everywhere.
+     - Intrinsic grids: repeat(auto-fit, minmax(X, 1fr)) adds columns as space
+       allows, so most components need no breakpoints.
+     - minmax(0, 1fr): lets a grid column shrink below its content's width,
+       which prevents horizontal scrolling on phones.
+     - Readable class names (.card, .gallery, .toc) describe what a thing is,
+       instead of utility classes that describe how it looks.
+   ========================================================================== */
+
+/* 1. Fonts: one variable file per family covers every weight we use.
+   font-display: swap shows fallback text while the font loads. */
 @font-face {
   font-family: "Geist";
   src: url("../fonts/geist-latin.woff2") format("woff2");
@@ -15,6 +41,9 @@
   font-display: swap;
 }
 
+/* 2. Tokens. Text colors all pass WCAG contrast at 7:1 or better (see DESIGN.md).
+   --step-* is a fluid type scale: clamp(min, preferred, max) grows with the
+   viewport without jumping at breakpoints. */
 :root {
   color-scheme: light dark;
   --bg: #ffffff;
@@ -42,6 +71,8 @@
   --gutter: clamp(1rem, 4vw, 2rem);
 }
 
+/* 3. Dark mode: only token values change, so no component needs its own
+   dark styles. No toggle, so no JavaScript is needed. */
 @media (prefers-color-scheme: dark) {
   :root {
     --bg: #111113;
@@ -54,7 +85,8 @@
   }
 }
 
-/* Base */
+/* 4. Base. :focus-visible shows a ring for keyboard users but not on mouse
+   clicks. The skip link sits off-screen until it receives focus. */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 body {
@@ -94,7 +126,8 @@ a:hover { text-decoration-thickness: 2px; }
 
 .container { width: min(100% - 2 * var(--gutter), var(--page)); margin-inline: auto; }
 
-/* Header */
+/* 5. Header. On phones (under 40rem) the nav drops below the wordmark.
+   Links stay at least 44px tall to be easy to tap. */
 .site-header { border-bottom: 1px solid var(--border); }
 .site-header .container {
   display: flex; align-items: center; justify-content: space-between; gap: 0.5rem 2rem;
@@ -118,14 +151,15 @@ a:hover { text-decoration-thickness: 2px; }
   .site-nav a { padding: 0 0.6rem; }
 }
 
-/* Footer */
+/* 5. Footer */
 .site-footer { border-top: 1px solid var(--border); margin-top: clamp(4rem, 10vw, 7rem); padding-block: 2.5rem; color: var(--muted); font-size: var(--step--1); }
 .site-footer .container { display: flex; flex-wrap: wrap; gap: 1rem 2rem; justify-content: space-between; align-items: center; }
 .site-footer ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem; }
 .site-footer a { color: var(--muted); }
 .site-footer a:hover { color: var(--text); }
 
-/* Shared layout pieces */
+/* 6. Shared pieces. .stack and .prose use the "> * + *" selector to add space
+   only between siblings, never above the first or below the last child. */
 main { display: block; }
 .section { padding-block: clamp(3rem, 8vw, 5.5rem) 0; }
 .section-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
@@ -149,7 +183,8 @@ main { display: block; }
 
 .text-link { font-weight: 600; white-space: nowrap; }
 
-/* Home hero */
+/* 7. Components
+   Home hero: text and photo side by side on wide screens, stacked on phones. */
 .hero { padding-block: clamp(2.5rem, 7vw, 5rem) 0; display: grid; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
 @media (min-width: 52rem) { .hero { grid-template-columns: 1.6fr 1fr; } }
 .hero h1 { max-width: 24ch; }
@@ -157,7 +192,9 @@ main { display: block; }
 .hero-photo { border-radius: var(--radius); overflow: hidden; background: var(--surface); aspect-ratio: 4 / 5; max-width: 26rem; justify-self: center; width: 100%; }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
 
-/* Project cards */
+/* Project cards: the title link's ::after is stretched over the whole card
+   ("stretched link"), so the card is one click target and one link for screen
+   readers. :has(a:focus-visible) moves the focus ring onto the whole card. */
 .card-grid { list-style: none; padding: 0; display: grid; gap: clamp(1.5rem, 3vw, 2.5rem) clamp(1.25rem, 3vw, 2rem); }
 @media (min-width: 44rem) { .card-grid { grid-template-columns: repeat(2, 1fr); } }
 .card { position: relative; }
@@ -174,7 +211,8 @@ main { display: block; }
 .tags { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
 .tags li { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); background: var(--surface); padding: 0.2rem 0.55rem; border-radius: var(--radius-sm); }
 
-/* Row list (side projects) */
+/* Row list: a compact list with hairlines, used for research and side projects.
+   Uses the same stretched-link pattern as the cards. */
 .row-list { list-style: none; padding: 0; border-top: 1px solid var(--border); }
 .row-list > li { border-bottom: 1px solid var(--border); position: relative; display: grid; gap: 0.35rem 2rem; padding-block: 1.5rem; }
 @media (min-width: 48rem) { .row-list > li { grid-template-columns: 16rem 1fr auto; align-items: baseline; } }
@@ -187,17 +225,18 @@ main { display: block; }
 .row-list p { color: var(--muted); max-width: 42rem; }
 .row-list .row-meta { font-family: var(--mono); font-size: 0.8125rem; color: var(--muted); white-space: nowrap; }
 
-/* Quote */
+/* Pull quote */
 .pull-quote { border-left: 3px solid var(--accent); padding: 0.25rem 0 0.25rem 1.5rem; max-width: 40rem; }
 .pull-quote p { font-size: var(--step-2); line-height: 1.35; letter-spacing: -0.02em; font-weight: 550; }
 .pull-quote footer { margin-top: 0.75rem; color: var(--muted); }
 
-/* Contact band */
+/* Contact band: a tinted panel that closes pages with a call to action. */
 .contact-band { background: var(--surface); border-radius: var(--radius); padding: clamp(2rem, 6vw, 3.5rem); }
 .contact-band h2 { max-width: 20ch; }
 .contact-band p { margin-top: 0.75rem; color: var(--muted); max-width: 38rem; }
 
-/* Page header (inner pages) */
+/* Page header and breadcrumb for inner pages. The breadcrumb's "/" separators
+   are generated with ::before so screen readers don't read them. */
 .page-head { padding-block: clamp(2.5rem, 7vw, 4.5rem) 0; }
 .page-head .lede { margin-top: 1rem; }
 .breadcrumb { font-size: var(--step--1); margin-bottom: 1.5rem; }
@@ -207,7 +246,11 @@ main { display: block; }
 .breadcrumb a:hover { color: var(--text); }
 .breadcrumb [aria-current="page"] { color: var(--text); }
 
-/* Case study */
+/* 8. Case study
+   Layout: .case-layout is a grid with a sticky contents sidebar on desktop
+   (64rem and up) and a single column below that. .no-toc pages skip the sidebar.
+   Prose: text is capped at --text-col (about 70 characters per line) for
+   readability, while .wide figures, galleries, cards and stats may use --wide. */
 .meta { display: grid; gap: 1rem 2.5rem; grid-template-columns: repeat(auto-fit, minmax(10rem, max-content)); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
 .meta dt { font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 .meta dd { margin: 0.25rem 0 0; font-weight: 500; }
@@ -271,7 +314,8 @@ figcaption { color: var(--muted); font-size: var(--step--1); margin-top: 0.75rem
 .next-project .label { color: var(--muted); font-size: var(--step--1); display: block; }
 .next-project a.big { font-size: var(--step-2); font-weight: 650; letter-spacing: -0.02em; color: var(--text); }
 
-/* Tables */
+/* 9. Tables: tabular-nums lines digits up in columns. .table-wrap scrolls
+   sideways on its own if a table is ever wider than a phone. */
 .table-wrap { overflow-x: auto; }
 .prose > .table-wrap { max-width: var(--wide); }
 table { border-collapse: collapse; width: 100%; font-variant-numeric: tabular-nums; }
@@ -281,7 +325,7 @@ thead th { font-family: var(--mono); font-size: 0.75rem; text-transform: upperca
 tbody th { font-weight: 600; }
 td { white-space: nowrap; }
 
-/* About */
+/* About page: two-column grid and a dated timeline. */
 .about-grid { display: grid; gap: clamp(2rem, 5vw, 4rem); margin-top: 2.5rem; }
 @media (min-width: 52rem) { .about-grid { grid-template-columns: 1.4fr 1fr; align-items: start; } }
 .about-grid .photo img { border-radius: var(--radius); width: 100%; max-width: 24rem; }
@@ -289,6 +333,7 @@ td { white-space: nowrap; }
 .timeline li { display: grid; grid-template-columns: 7.5rem 1fr; gap: 1rem; padding-block: 0.85rem; border-bottom: 1px solid var(--border); }
 .timeline .when { font-family: var(--mono); font-size: 0.875rem; color: var(--muted); padding-top: 0.15rem; }
 
+/* 10. Preferences: honor the OS "reduce motion" setting, and print clean pages. */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }

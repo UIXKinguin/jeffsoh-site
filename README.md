@@ -45,6 +45,7 @@ images under `assets/img/<project>/` (WebP, at most 1600px wide), add a card to
 | `assets/img/`, `assets/fonts/` | Images (WebP) and self-hosted Geist fonts |
 | `build.py` | The build script |
 | `DESIGN.md` | Design system and accessibility rules |
+| `ARCHITECTURE.md` | How the build, CSS patterns and deployment work |
 | `_source/` | Scripts used to migrate content from Squarespace (not served) |
 | `.claude/skills/` | Design skills for Claude Code sessions in this repo |
 
