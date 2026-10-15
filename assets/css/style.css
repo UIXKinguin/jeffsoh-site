@@ -265,6 +265,12 @@ main { display: block; }
 
 .case-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2.5rem 3rem; margin-top: clamp(2.5rem, 6vw, 4rem); }
 .case-layout .prose > :first-child { margin-top: 0; }
+/* At a glance: a skimmable problem / approach / outcome summary near the top of each case study. */
+.summary { margin-top: clamp(2rem, 5vw, 3rem); padding: clamp(1.25rem, 3vw, 1.75rem); border: 1px solid var(--border); border-radius: var(--radius); }
+.summary h2 { font-family: var(--mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); font-weight: 500; }
+.summary dl { display: grid; gap: 1.25rem 2rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); margin-top: 1rem; }
+.summary dt { font-weight: 650; }
+.summary dd { margin: 0.35rem 0 0; color: var(--muted); font-size: 0.975rem; line-height: 1.55; }
 .toc { padding: 1.25rem 1.5rem; background: var(--surface); border-radius: var(--radius); max-width: var(--text-col); }
 @media (min-width: 64rem) {
   .case-layout { grid-template-columns: 11rem minmax(0, 1fr); }
