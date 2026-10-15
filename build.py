@@ -27,7 +27,7 @@ EMAIL = "jeffrey.oh.hci@gmail.com"
 # so existing links keep working.
 NAV = [("projects", "Research", "/side-projects/"), ("work", "Work", "/my-work/"),
        ("about", "About", "/about-me/"), ("contact", "Contact", "/contact/"),
-       ("resume", 'Resume<span class="visually-hidden"> (PDF)</span>', "/assets/files/jeffrey-oh-resume.pdf")]
+       ("resume", 'Resume<span class="visually-hidden"> (PDF, opens in a new tab)</span>', "/assets/files/jeffrey-oh-resume.pdf")]
 
 # Old Squarespace URLs that should keep working.
 REDIRECTS = {
@@ -44,7 +44,9 @@ def header(nav_key):
     items = []
     for key, label, href in NAV:
         cur = ' aria-current="page"' if key == nav_key else ""
-        items.append(f'<li><a href="{href}"{cur}>{label}</a></li>')
+        # Files (the resume PDF) open in a new tab so visitors keep their place on the site
+        new_tab = ' target="_blank" rel="noopener"' if href.endswith(".pdf") else ""
+        items.append(f'<li><a href="{href}"{cur}{new_tab}>{label}</a></li>')
     return f"""<a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container">
